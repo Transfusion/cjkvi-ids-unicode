@@ -6,6 +6,8 @@ authors = ["Bryan Kok <bryan.wyern1@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
+tqdm = "^4.56.0"
+requests = "^2.25.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
