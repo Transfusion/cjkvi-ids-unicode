@@ -1,0 +1,6 @@
+[submodule "rawdata/ids"]
+	path = rawdata/ids
+	url = https://gitlab.chise.org/CHISE/ids.git
+[submodule "rawdata/cjkvi-ids"]
+	path = rawdata/cjkvi-ids
+	url = https://github.com/cjkvi/cjkvi-ids
