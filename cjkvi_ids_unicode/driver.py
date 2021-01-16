@@ -164,7 +164,9 @@ class JISX0213:
             if not line:
                 break
             entry = line.split("\t")
-            self.map[entry[0]] = entry[1]
+            if '+' in entry[1][2:] or not len(entry[1]):
+                continue
+            self.map[entry[0]] = chr(int(entry[1][2:], 16))
         t.close()
 
     def resolve(self, plane: int, code: str):
@@ -206,6 +208,9 @@ class MojiJouHouKiban:
             entry = line.split(" ")
             self.map[entry[-1].strip()] = chr(int(entry[0], 16))
         t.close()
+
+    def resolve(self, entity_reference: str):
+        return self.map.get(entity_reference, None)
 
 
 class HanYouDenShi:
@@ -324,7 +329,7 @@ def init_raw_data():
 
 
 def cli(args=None):
-    # create_output_dir()
+    create_output_dir()
     init_raw_data()
     glyphwiki = GlyphWiki(constants.GLYPHWIKI_VARIANT_INFO)
     kawabata_ab = Kawabata(constants.KAWABATA_IDS_AB)
@@ -379,16 +384,18 @@ def cli(args=None):
             elif entity.startswith(constants.entity_ref_constants.AJ1_PREFIX):
                 res = glyphwiki.resolve(entity.lower())
             elif entity.startswith(constants.entity_ref_constants.UCS_PREFIX):
-                print("resolving via gw")
+                # print("resolving via gw")
                 entity = utils.convert_ucs_to_glyphwiki_key(entity)
                 res = glyphwiki.resolve(entity)
-                print("gw resolution obtained")
-                print(res)
+                # print("gw resolution obtained")
+                # print(res)
             elif entity.startswith(constants.entity_ref_constants.HD_PREFIX):
                 entity = entity[
                     len(constants.entity_ref_constants.HD_PREFIX) :
                 ].replace("-", "")
                 res = hanyoudenshi.resolve(entity)
+            elif entity.startswith(constants.entity_ref_constants.MJ_PREFIX):
+                res = mojijouhou.resolve(entity)
 
             if res is None:
                 # return None
@@ -409,7 +416,8 @@ def cli(args=None):
         return ids
 
     # print(kawabata_ab.map)
-    for f in os.listdir(constants.CHISE_IDS_ROOT_FOLDER):
+    # for f in os.listdir(constants.CHISE_IDS_ROOT_FOLDER):
+    for f in ['IDS-UCS-Ext-F.txt']:
         resolved = []  # list of tuple of char, [ids]
         unresolved = []  # list of tuple of char, [ids] (ids from CHISE)
         entities_resolved = (
@@ -480,6 +488,8 @@ def cli(args=None):
                         is_unresolvable = True
                         if resolved_ids_string != ids:
                             res_ids_arr.append(resolved_ids_string)
+                    else:
+                        res_ids_arr.append(resolved_ids_string)
 
                 if is_unresolvable:
                     if len(res_ids_arr):
