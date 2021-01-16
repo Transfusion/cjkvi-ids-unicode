@@ -39,10 +39,10 @@ CNS11643_INFO = {
 
 UNRESOLVED_FILE_PREFIX = "UNRESOLVED_"
 RESOLVED_FILE_PREFIX = "RESOLVED_"
-ENTITIES_RESOLVED_FILE_PREFIX = "ENTITY_RESOLVED_"
-# unresolvable is for all characters that, after 1st round replacement,
-# don't pass is_valid_ids
+ENTITIES_RESOLVED_FILE_PREFIX = "ENTITIES_RESOLVED_"
+# unresolvable is for all characters that have stroke placeholders or
+# DON'T have all of their entity references resolved
 UNRESOLVABLE_FILE_PREFIX = "UNRESOLVABLE_"
 # partially resolved is for characters with *at least one* entity reference
-# replaced
-PARTIALLY_ENTITIES_RESOLVED_FILE_PREFIX = "PARTIALLY_ENTITIES_RESOLVED_"
+# resolved, but not all (only append ids which aren't totally unresolved)
+ENTITIES_PARTIALLY_RESOLVED_FILE_PREFIX = "ENTITIES_PARTIALLY_RESOLVED_"

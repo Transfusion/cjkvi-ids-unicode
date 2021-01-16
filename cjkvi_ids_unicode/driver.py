@@ -391,7 +391,8 @@ def cli(args=None):
                 res = hanyoudenshi.resolve(entity)
 
             if res is None:
-                return None
+                # return None
+                pass
             else:
                 entity_map[og_entity] = res
 
@@ -402,7 +403,8 @@ def cli(args=None):
 
         for full_entity in full_entity_arr:
             entity = full_entity[1:-1]
-            ids = ids.replace(full_entity, entity_map[entity])
+            if entity in entity_map:
+                ids = ids.replace(full_entity, entity_map[entity])
 
         return ids
 
@@ -414,6 +416,8 @@ def cli(args=None):
             []
         )  # list of tuple of char, [ids] (lost structural information)
         unresolvable = []  # list of tuple of char, [ids]
+        partially_resolved = []
+
         if f.startswith(constants.CHISE_IDS_UCS_PREFIX):
             chise = Chise(os.path.join(constants.CHISE_IDS_ROOT_FOLDER, f))
 
@@ -468,20 +472,24 @@ def cli(args=None):
 
             # resolve all the unresolved using rawdata
             for (char, ids_arr) in unresolved:
-                if any(map(ids_contains_stroke_placeholders, ids_arr)):
-                    unresolvable.append((char, ids_arr))
-                    continue
-
                 res_ids_arr = []
+                is_unresolvable = False
                 for ids in ids_arr:
-                    res_ids_arr.append(resolve_entity_references(ids))
-                print(ids_arr, res_ids_arr)
-                if any(map(lambda ids: ids is None, res_ids_arr)):
-                    unresolvable.append((char, ids_arr))
+                    resolved_ids_string = resolve_entity_references(ids)
+                    if not is_valid_ids(resolved_ids_string):
+                        is_unresolvable = True
+                        if resolved_ids_string != ids:
+                            res_ids_arr.append(resolved_ids_string)
+
+                if is_unresolvable:
+                    if len(res_ids_arr):
+                        partially_resolved.append((char, res_ids_arr))
+                    else:
+                        unresolvable.append((char, ids_arr))
                 else:
                     entities_resolved.append((char, res_ids_arr))
 
-            # write entity resolved to file
+            # write entities resolved to file
             with open(
                 os.path.join(
                     constants.OUTPUT_DIR, constants.ENTITIES_RESOLVED_FILE_PREFIX + f
@@ -502,6 +510,20 @@ def cli(args=None):
                 "w",
             ) as _file:
                 for (char, ids) in unresolvable:
+                    cp = f"U+{ord(char):x}".upper()
+                    ids = "\t".join(ids)
+                    _file.write(f"{cp}\t{char}\t{ids}\n")
+                _file.close()
+
+            # write partially resolved to file
+            with open(
+                os.path.join(
+                    constants.OUTPUT_DIR,
+                    constants.ENTITIES_PARTIALLY_RESOLVED_FILE_PREFIX + f,
+                ),
+                "w",
+            ) as _file:
+                for (char, ids) in partially_resolved:
                     cp = f"U+{ord(char):x}".upper()
                     ids = "\t".join(ids)
                     _file.write(f"{cp}\t{char}\t{ids}\n")
