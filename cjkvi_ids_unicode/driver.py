@@ -501,8 +501,7 @@ def cli(args=None):
                 if is_unresolvable:
                     if len(res_ids_arr):
                         partially_resolved.append((char, res_ids_arr))
-                    else:
-                        unresolvable.append((char, ids_arr))
+                    unresolvable.append((char, ids_arr))
                 else:
                     entities_resolved.append((char, res_ids_arr))
 
