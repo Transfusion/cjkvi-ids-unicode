@@ -164,7 +164,7 @@ class JISX0213:
             if not line:
                 break
             entry = line.split("\t")
-            if '+' in entry[1][2:] or not len(entry[1]):
+            if "+" in entry[1][2:] or not len(entry[1]):
                 continue
             self.map[entry[0]] = chr(int(entry[1][2:], 16))
         t.close()
@@ -328,6 +328,21 @@ def init_raw_data():
     #     )
 
 
+CharIDSTuple = tuple[str, list[str]]
+
+
+def write_char_ids_to_file(ls: list[CharIDSTuple], filepath):
+    with open(
+        filepath,
+        "w",
+    ) as _file:
+        for (char, ids) in ls:
+            cp = f"U+{ord(char):x}".upper()
+            ids = "\t".join(ids)
+            _file.write(f"{cp}\t{char}\t{ids}\n")
+        _file.close()
+
+
 def cli(args=None):
     create_output_dir()
     init_raw_data()
@@ -417,14 +432,16 @@ def cli(args=None):
 
     # print(kawabata_ab.map)
     # for f in os.listdir(constants.CHISE_IDS_ROOT_FOLDER):
-    for f in ['IDS-UCS-Ext-F.txt']:
-        resolved = []  # list of tuple of char, [ids]
-        unresolved = []  # list of tuple of char, [ids] (ids from CHISE)
-        entities_resolved = (
-            []
-        )  # list of tuple of char, [ids] (lost structural information)
-        unresolvable = []  # list of tuple of char, [ids]
-        partially_resolved = []
+    for f in ["IDS-UCS-Ext-F.txt"]:
+        resolved: list[CharIDSTuple] = []  # list of tuple of char, [ids]
+        unresolved: list[
+            CharIDSTuple
+        ] = []  # list of tuple of char, [ids] (ids from CHISE)
+        entities_resolved: list[
+            CharIDSTuple
+        ] = []  # list of tuple of char, [ids] (lost structural information)
+        unresolvable: list[CharIDSTuple] = []  # list of tuple of char, [ids]
+        partially_resolved: list[CharIDSTuple] = []
 
         if f.startswith(constants.CHISE_IDS_UCS_PREFIX):
             chise = Chise(os.path.join(constants.CHISE_IDS_ROOT_FOLDER, f))
@@ -455,28 +472,18 @@ def cli(args=None):
                     unresolved.append((char, chise.map[char]))
 
             # write resolved to file
-            with open(
+            write_char_ids_to_file(
+                resolved,
                 os.path.join(constants.OUTPUT_DIR, constants.RESOLVED_FILE_PREFIX + f),
-                "w",
-            ) as _file:
-                for (char, ids) in resolved:
-                    cp = f"U+{ord(char):x}".upper()
-                    ids = "\t".join(ids)
-                    _file.write(f"{cp}\t{char}\t{ids}\n")
-                _file.close()
+            )
 
             # write unresolved to file
-            with open(
+            write_char_ids_to_file(
+                unresolved,
                 os.path.join(
                     constants.OUTPUT_DIR, constants.UNRESOLVED_FILE_PREFIX + f
                 ),
-                "w",
-            ) as _file:
-                for (char, ids) in unresolved:
-                    cp = f"U+{ord(char):x}".upper()
-                    ids = "\t".join(ids)
-                    _file.write(f"{cp}\t{char}\t{ids}\n")
-                _file.close()
+            )
 
             # resolve all the unresolved using rawdata
             for (char, ids_arr) in unresolved:
@@ -500,42 +507,26 @@ def cli(args=None):
                     entities_resolved.append((char, res_ids_arr))
 
             # write entities resolved to file
-            with open(
+            write_char_ids_to_file(
+                entities_resolved,
                 os.path.join(
                     constants.OUTPUT_DIR, constants.ENTITIES_RESOLVED_FILE_PREFIX + f
                 ),
-                "w",
-            ) as _file:
-                for (char, ids) in entities_resolved:
-                    cp = f"U+{ord(char):x}".upper()
-                    ids = "\t".join(ids)
-                    _file.write(f"{cp}\t{char}\t{ids}\n")
-                _file.close()
+            )
 
             # write unresolvable to file
-            with open(
+            write_char_ids_to_file(
+                unresolvable,
                 os.path.join(
                     constants.OUTPUT_DIR, constants.UNRESOLVABLE_FILE_PREFIX + f
                 ),
-                "w",
-            ) as _file:
-                for (char, ids) in unresolvable:
-                    cp = f"U+{ord(char):x}".upper()
-                    ids = "\t".join(ids)
-                    _file.write(f"{cp}\t{char}\t{ids}\n")
-                _file.close()
+            )
 
             # write partially resolved to file
-            with open(
+            write_char_ids_to_file(
+                partially_resolved,
                 os.path.join(
                     constants.OUTPUT_DIR,
                     constants.ENTITIES_PARTIALLY_RESOLVED_FILE_PREFIX + f,
                 ),
-                "w",
-            ) as _file:
-                for (char, ids) in partially_resolved:
-                    cp = f"U+{ord(char):x}".upper()
-                    ids = "\t".join(ids)
-                    _file.write(f"{cp}\t{char}\t{ids}\n")
-                _file.close()
-            break
+            )
