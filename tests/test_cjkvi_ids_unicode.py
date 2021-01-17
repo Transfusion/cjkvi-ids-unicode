@@ -1,7 +1,13 @@
 from cjkvi_ids_unicode import __version__
+import pytest
 import cjkvi_ids_unicode.utils as utils
 import cjkvi_ids_unicode.driver as driver
 import cjkvi_ids_unicode.constants as constants
+
+
+@pytest.fixture(scope="session", autouse=True)
+def init(request):
+    driver.init_raw_data()
 
 
 def test_version():
