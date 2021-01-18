@@ -7,6 +7,17 @@ import cjkvi_ids_unicode.utils as utils
 
 STROKE_PLACEHOLDERS = set(
     [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
         "①",
         "②",
         "③",
@@ -432,7 +443,7 @@ def cli(args=None):
 
     # print(kawabata_ab.map)
     # for f in os.listdir(constants.CHISE_IDS_ROOT_FOLDER):
-    for f in ["IDS-UCS-Ext-F.txt"]:
+    for f in ["IDS-UCS-Ext-G.txt"]:
         resolved: list[CharIDSTuple] = []  # list of tuple of char, [ids]
         unresolved: list[
             CharIDSTuple
