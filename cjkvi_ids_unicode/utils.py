@@ -24,7 +24,9 @@ def convert_cdp_to_glyphwiki_key(entity: str):
 
 def convert_ucs_to_glyphwiki_key(entity: str):
     """U-v002+4E11 -> u4e11-var-002"""
-    if entity[2] == "i":
+    if entity[1] == '+':
+        entity = 'u' + entity[2:]
+    elif entity[2] == "i":
         entity = "u" + entity[7:] + "-itaiji-" + entity[3:6]
     elif entity[2] == "v":
         entity = "u" + entity[7:] + "-var-" + entity[3:6]

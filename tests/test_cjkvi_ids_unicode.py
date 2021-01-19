@@ -23,6 +23,7 @@ def test_ucs_to_glyphwiki_key():
     assert utils.convert_ucs_to_glyphwiki_key("U-v002+4E11") == "u4e11-var-002"
     assert utils.convert_ucs_to_glyphwiki_key("U-i001+864D") == "u864d-itaiji-001"
     assert utils.convert_ucs_to_glyphwiki_key("U-i001+2D94D") == "u2d94d-itaiji-001"
+    assert utils.convert_ucs_to_glyphwiki_key("U+7680") == "u7680"
 
 
 def test_glyphwiki_resolution():

@@ -50,7 +50,11 @@ def ids_contains_stroke_placeholders(ids: str):
 
 
 def is_valid_ids(ids: str):
-    return ("&" not in ids) and not ids_contains_stroke_placeholders(ids)
+    return (
+        ("&" not in ids)
+        and ("?" not in ids)
+        and not ids_contains_stroke_placeholders(ids)
+    )
 
 
 class Kawabata:
@@ -422,6 +426,12 @@ def cli(args=None):
                 res = hanyoudenshi.resolve(entity)
             elif entity.startswith(constants.entity_ref_constants.MJ_PREFIX):
                 res = mojijouhou.resolve(entity)
+            elif entity.startswith(constants.entity_ref_constants.G0_PREFIX):
+                res = glyphwiki.resolve(entity.lower())
+            elif entity.startswith(constants.entity_ref_constants.IWDS_PREFIX):
+                entity = entity[len(constants.entity_ref_constants.IWDS_PREFIX) :]
+                entity = utils.convert_ucs_to_glyphwiki_key(entity)
+                res = glyphwiki.resolve(entity)
 
             if res is None:
                 # return None
