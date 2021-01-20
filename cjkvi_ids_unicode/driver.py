@@ -270,6 +270,22 @@ class CNS11643:
         return self.map.get(entity_reference, None)
 
 
+class ManualEntries:
+    def __init__(self, input_file_path):
+        self.input_file_path = input_file_path
+        self.map = {}
+        t = open(self.input_file_path)
+        while True:
+            line = t.readline()
+            if line.startswith("#"):
+                continue
+            if not line:
+                break
+            entry = line.split("\t")
+            self.map[entry[1]] = list(map(lambda x: x.strip(), entry[2:]))
+        t.close()
+
+
 def create_output_dir():
     if not os.path.exists(constants.OUTPUT_DIR):
         os.makedirs(constants.OUTPUT_DIR)
@@ -414,11 +430,8 @@ def cli(args=None):
             elif entity.startswith(constants.entity_ref_constants.AJ1_PREFIX):
                 res = glyphwiki.resolve(entity.lower())
             elif entity.startswith(constants.entity_ref_constants.UCS_PREFIX):
-                # print("resolving via gw")
                 entity = utils.convert_ucs_to_glyphwiki_key(entity)
                 res = glyphwiki.resolve(entity)
-                # print("gw resolution obtained")
-                # print(res)
             elif entity.startswith(constants.entity_ref_constants.HD_PREFIX):
                 entity = entity[
                     len(constants.entity_ref_constants.HD_PREFIX) :
@@ -464,7 +477,18 @@ def cli(args=None):
         unresolvable: list[CharIDSTuple] = []  # list of tuple of char, [ids]
         partially_resolved: list[CharIDSTuple] = []
 
+        manually_resolved: list[CharIDSTuple] = []
+        manually_partially_resolved: list[CharIDSTuple] = []
+
         if f.startswith(constants.CHISE_IDS_UCS_PREFIX):
+            manual_ids = ManualEntries(
+                os.path.join(constants.MANUAL_IDS_ROOT_FOLDER, f)
+            )
+
+            manual_ids_partial = ManualEntries(
+                os.path.join(constants.MANUAL_IDS_ROOT_FOLDER, "PARTIAL_" + f)
+            )
+
             chise = Chise(os.path.join(constants.CHISE_IDS_ROOT_FOLDER, f))
 
             for char in chise.map:
@@ -507,24 +531,75 @@ def cli(args=None):
             )
 
             # resolve all the unresolved using rawdata
+            # for (char, ids_arr) in unresolved:
+            #     res_ids_arr = []
+            #     is_unresolvable = False
+            #     for ids in ids_arr:
+            #         resolved_ids_string = resolve_entity_references(ids)
+            #         if not is_valid_ids(resolved_ids_string):
+            #             is_unresolvable = True
+            #             if resolved_ids_string != ids:
+            #                 res_ids_arr.append(resolved_ids_string)
+            #         else:
+            #             res_ids_arr.append(resolved_ids_string)
+
+            #     if is_unresolvable:
+            #         if len(res_ids_arr):
+            #             partially_resolved.append((char, res_ids_arr))
+            #         unresolvable.append((char, ids_arr))
+            #     else:
+            #         entities_resolved.append((char, res_ids_arr))
+
             for (char, ids_arr) in unresolved:
-                res_ids_arr = []
-                is_unresolvable = False
+                entities_resolved_ids_arr = []
+                unresolvable_ids_arr = []
+                entities_partially_resolved_ids_arr = []
+
+                manually_resolved_ids_arr = []
+                manually_partially_resolved_ids_arr = []
+
                 for ids in ids_arr:
                     resolved_ids_string = resolve_entity_references(ids)
+                    # isn't a valid ids, but some improvement, entities_partially_resolved
                     if not is_valid_ids(resolved_ids_string):
-                        is_unresolvable = True
                         if resolved_ids_string != ids:
-                            res_ids_arr.append(resolved_ids_string)
+                            entities_partially_resolved_ids_arr.append(
+                                resolved_ids_string
+                            )
+                        # isn't a valid ids, no improvement
+                        else:
+                            unresolvable_ids_arr.append(ids)
+                    # is a valid ids! entities resolved
                     else:
-                        res_ids_arr.append(resolved_ids_string)
+                        entities_resolved_ids_arr.append(resolved_ids_string)
 
-                if is_unresolvable:
-                    if len(res_ids_arr):
-                        partially_resolved.append((char, res_ids_arr))
-                    unresolvable.append((char, ids_arr))
-                else:
-                    entities_resolved.append((char, res_ids_arr))
+                if len(entities_resolved_ids_arr):
+                    entities_resolved.append((char, entities_resolved_ids_arr))
+                if len(unresolvable_ids_arr):
+                    unresolvable.append((char, unresolvable_ids_arr))
+                if len(entities_partially_resolved_ids_arr):
+                    partially_resolved.append(
+                        (char, entities_partially_resolved_ids_arr)
+                    )
+
+                # now filter against the manual files
+                if char in manual_ids.map:
+                    for ids in manual_ids.map[char]:
+                        if ids not in entities_resolved_ids_arr:
+                            manually_resolved_ids_arr.append(ids)
+
+                if len(manually_resolved_ids_arr):
+                    manually_resolved.append((char, manually_resolved_ids_arr))
+
+                if char in manual_ids_partial.map:
+                    for ids in manual_ids_partial.map[char]:
+                        if ids not in entities_partially_resolved_ids_arr:
+                            manually_partially_resolved_ids_arr.append(ids)
+
+                if len(manually_partially_resolved_ids_arr):
+                    manually_partially_resolved.append(
+                        (char, manually_partially_resolved_ids_arr)
+                    )
 
             # write entities resolved to file
             write_char_ids_to_file(
@@ -548,5 +623,23 @@ def cli(args=None):
                 os.path.join(
                     constants.OUTPUT_DIR,
                     constants.ENTITIES_PARTIALLY_RESOLVED_FILE_PREFIX + f,
+                ),
+            )
+
+            # write manually resolved to file
+            write_char_ids_to_file(
+                manually_resolved,
+                os.path.join(
+                    constants.OUTPUT_DIR,
+                    constants.MANUALLY_RESOLVED_FILE_PREFIX + f,
+                ),
+            )
+
+            # write manually partially resolved to file
+            write_char_ids_to_file(
+                manually_partially_resolved,
+                os.path.join(
+                    constants.OUTPUT_DIR,
+                    constants.MANUALLY_PARTIALLY_RESOLVED_FILE_PREFIX + f,
                 ),
             )
