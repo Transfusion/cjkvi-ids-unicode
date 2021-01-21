@@ -1,6 +1,7 @@
 import typing
 from pathlib import Path
 from tqdm import tqdm
+from shutil import copyfile
 import sys, os, glob, csv, tarfile, requests, datetime
 import cjkvi_ids_unicode.constants as constants
 import cjkvi_ids_unicode.utils as utils
@@ -490,6 +491,12 @@ def cli(args=None):
             )
 
             chise = Chise(os.path.join(constants.CHISE_IDS_ROOT_FOLDER, f))
+
+            # copy this file into the output for gh-pages
+            copyfile(
+                os.path.join(constants.CHISE_IDS_ROOT_FOLDER, f),
+                os.path.join(constants.OUTPUT_DIR, constants.ORIGINAL_FILE_PREFIX + f),
+            )
 
             for char in chise.map:
                 kawabata = None
