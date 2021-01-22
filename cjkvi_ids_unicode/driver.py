@@ -392,7 +392,6 @@ def cli(args=None):
     entity_map = {}
 
     def resolve_entity_references(ids: str):
-        print("resolving entity references", ids)
         """Input is a complete IDS sequence, output is
         the same sequence but with all entity references replaced or None"""
         ampersands = [i for i in range(len(ids)) if ids[i] == "&"]
@@ -407,7 +406,6 @@ def cli(args=None):
             # strip A-
             if entity.startswith(constants.entity_ref_constants.ALIAS_PREFIX):
                 entity = entity[2:]
-            print(entity)
             if entity.startswith(constants.entity_ref_constants.CDP_PREFIX):
                 if len(entity) != 8:  # cdp-xxxx
                     entity = utils.convert_cdp_to_glyphwiki_key(entity)
