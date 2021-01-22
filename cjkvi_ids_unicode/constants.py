@@ -43,12 +43,16 @@ ORIGINAL_FILE_PREFIX = "ORIGINAL_"
 UNRESOLVED_FILE_PREFIX = "UNRESOLVED_"
 RESOLVED_FILE_PREFIX = "RESOLVED_"
 ENTITIES_RESOLVED_FILE_PREFIX = "ENTITIES_RESOLVED_"
-# unresolvable is for all characters that have stroke placeholders or
-# DON'T have all of their entity references resolved
+# entries in unresolvable are for ids strings which have stroke placeholders
+# or remaining entity references of characters even after resolution attempt
+# therefore, a character may be present in all 3 of
+# entities_resolved, unresolvable, and entities_partially_resolved
 UNRESOLVABLE_FILE_PREFIX = "UNRESOLVABLE_"
-# partially resolved is for characters with *at least one* entity reference
-# resolved, but not all (only append ids which aren't totally unresolved)
+# partially resolved is for ids which aren't totally unresolved
+# i.e. which have some improvement over the original
 ENTITIES_PARTIALLY_RESOLVED_FILE_PREFIX = "ENTITIES_PARTIALLY_RESOLVED_"
 
 MANUALLY_RESOLVED_FILE_PREFIX = "MANUALLY_RESOLVED_"
 MANUALLY_PARTIALLY_RESOLVED_FILE_PREFIX = "MANUALLY_PARTIALLY_RESOLVED_"
+
+OUTPUT_METADATA_JSON = "output/metadata.json"

@@ -3,8 +3,10 @@ from pathlib import Path
 from tqdm import tqdm
 from shutil import copyfile
 import sys, os, glob, csv, tarfile, requests, datetime
+from cjkvi_ids_unicode.types import CharIDSTuple
 import cjkvi_ids_unicode.constants as constants
 import cjkvi_ids_unicode.utils as utils
+from cjkvi_ids_unicode.metadata_generator import MetadataGenerator
 
 STROKE_PLACEHOLDERS = set(
     [
@@ -360,9 +362,6 @@ def init_raw_data():
     #     )
 
 
-CharIDSTuple = tuple[str, list[str]]
-
-
 def write_char_ids_to_file(ls: list[CharIDSTuple], filepath):
     with open(
         filepath,
@@ -465,7 +464,7 @@ def cli(args=None):
 
         return ids
 
-    # print(kawabata_ab.map)
+    metadata_generator = MetadataGenerator()
     # for f in os.listdir(constants.CHISE_IDS_ROOT_FOLDER):
     for f in ["IDS-UCS-Ext-G.txt"]:
         resolved: list[CharIDSTuple] = []  # list of tuple of char, [ids]
@@ -650,3 +649,17 @@ def cli(args=None):
                     constants.MANUALLY_PARTIALLY_RESOLVED_FILE_PREFIX + f,
                 ),
             )
+
+            metadata_generator.add_ids_data(
+                f,
+                chise.map.keys(),
+                resolved,
+                unresolved,
+                entities_resolved,
+                unresolvable,
+                partially_resolved,
+                manually_resolved,
+                manually_partially_resolved,
+            )
+
+    metadata_generator.write_output_metadata_json()
