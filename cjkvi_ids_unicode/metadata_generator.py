@@ -133,7 +133,7 @@ class MetadataGenerator:
     def get_metadata(self):
         j = {"ids_data": {}}
 
-        for filename in self.map:
+        for filename in sorted(self.map.keys()):
             j["ids_data"][filename] = {}
 
             j["ids_data"][filename]["original"] = {
