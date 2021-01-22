@@ -686,5 +686,4 @@ def cli(args=None):
                 totally_unresolvable,
             )
 
-    metadata_generator.write_output_metadata_json()
     metadata_generator.generate_html()

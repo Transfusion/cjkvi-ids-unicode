@@ -44,6 +44,18 @@
             All entity references remain unresolved
         </div>
 
+        <h3>Metadata</h3>
+
+        <div class="subtext">For machine consumption</div>
+        <div class="file-entry">
+            <div>
+                <a href="{{metadata_json_name}}">{{metadata_json_name}}</a>
+            </div>
+            <span>{{metadata_source_cnt}} source IDS files</span>
+
+            <span>{{"{0:.2f}".format(metadata_json_size / 1024)}} KB</span>
+        </div>
+
         {% for ids_filename, ids_data in complete_metadata['ids_data'].items() %}
         <h3>{{ ids_filename }}</h3>
         <div class="stats">
@@ -201,7 +213,7 @@
         
     </div>
 
-    <div class="island footer">
+    <div class="island subtext">
         <div>Curated by Bryan Kok.</div>
         <div>Feedback welcome on <a href="https://github.com/Transfusion/cjkvi-ids-unicode">GitHub</a>.</div>
 

@@ -17,7 +17,7 @@ class MetadataGenerator:
         "manually_partially_resolved": constants.MANUALLY_PARTIALLY_RESOLVED_FILE_PREFIX,
         "unresolved": constants.UNRESOLVED_FILE_PREFIX,
         "unresolvable": constants.UNRESOLVABLE_FILE_PREFIX,
-        "totally_unresolvable": constants.TOTALLY_UNRESOLVABLE_FILE_PREFIX
+        "totally_unresolvable": constants.TOTALLY_UNRESOLVABLE_FILE_PREFIX,
     }
 
     Entry = namedtuple(
@@ -172,6 +172,8 @@ class MetadataGenerator:
         return j
 
     def generate_html(self):
+        self.write_output_metadata_json()
+
         env = Environment(loader=FileSystemLoader(constants.HTML_TEMPLATE_DIR))
         template = env.get_template("index.html")
 
@@ -212,7 +214,13 @@ class MetadataGenerator:
                 ),
             }
 
-        rendered = template.render(stats=stats, complete_metadata=self.get_metadata())
+        rendered = template.render(
+            stats=stats,
+            complete_metadata=self.get_metadata(),
+            metadata_json_name=constants.OUTPUT_METADATA_JSON_NAME,
+            metadata_source_cnt=len(self.map),
+            metadata_json_size=MetadataGenerator.get_output_metadata_json_size(),
+        )
         with open(os.path.join(constants.OUTPUT_DIR, "index.html"), "w") as f:
             f.write(rendered)
 
@@ -228,3 +236,9 @@ class MetadataGenerator:
 
         with open(constants.OUTPUT_METADATA_JSON, "w") as outfile:
             json.dump(j, outfile, indent=4)
+
+    def get_output_metadata_json_size():
+        if os.path.exists(constants.OUTPUT_METADATA_JSON):
+            return os.path.getsize(constants.OUTPUT_METADATA_JSON)
+        else:
+            return None
