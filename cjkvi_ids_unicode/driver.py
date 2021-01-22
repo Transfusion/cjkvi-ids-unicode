@@ -277,6 +277,8 @@ class ManualEntries:
     def __init__(self, input_file_path):
         self.input_file_path = input_file_path
         self.map = {}
+        if not os.path.exists(input_file_path):
+            return
         t = open(self.input_file_path)
         while True:
             line = t.readline()
@@ -465,8 +467,8 @@ def cli(args=None):
         return ids
 
     metadata_generator = MetadataGenerator()
-    # for f in os.listdir(constants.CHISE_IDS_ROOT_FOLDER):
-    for f in ["IDS-UCS-Ext-G.txt"]:
+    # for f in ["IDS-UCS-Ext-B-3.txt"]:
+    for f in os.listdir(constants.CHISE_IDS_ROOT_FOLDER):
         resolved: list[CharIDSTuple] = []  # list of tuple of char, [ids]
         unresolved: list[
             CharIDSTuple
@@ -479,6 +481,9 @@ def cli(args=None):
 
         manually_resolved: list[CharIDSTuple] = []
         manually_partially_resolved: list[CharIDSTuple] = []
+
+        # the char is not in any of the other lists
+        totally_unresolvable: list[CharIDSTuple] = []
 
         if f.startswith(constants.CHISE_IDS_UCS_PREFIX):
             manual_ids = ManualEntries(
@@ -607,6 +612,15 @@ def cli(args=None):
                         (char, manually_partially_resolved_ids_arr)
                     )
 
+                if (
+                    not len(entities_resolved_ids_arr)
+                    and not len(entities_partially_resolved_ids_arr)
+                    and len(unresolvable_ids_arr)
+                    and not len(manually_resolved_ids_arr)
+                    and not len(manually_partially_resolved_ids_arr)
+                ):
+                    totally_unresolvable.append((char, ids_arr))
+
             # write entities resolved to file
             write_char_ids_to_file(
                 entities_resolved,
@@ -650,6 +664,15 @@ def cli(args=None):
                 ),
             )
 
+            # write totally unresolvable to file
+            write_char_ids_to_file(
+                totally_unresolvable,
+                os.path.join(
+                    constants.OUTPUT_DIR,
+                    constants.TOTALLY_UNRESOLVABLE_FILE_PREFIX + f,
+                ),
+            )
+
             metadata_generator.add_ids_data(
                 f,
                 chise.map.keys(),
@@ -660,6 +683,8 @@ def cli(args=None):
                 partially_resolved,
                 manually_resolved,
                 manually_partially_resolved,
+                totally_unresolvable,
             )
 
     metadata_generator.write_output_metadata_json()
+    metadata_generator.generate_html()

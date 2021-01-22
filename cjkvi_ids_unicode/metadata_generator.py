@@ -1,16 +1,28 @@
-import typing, datetime, json
+import typing, datetime, json, os
+from shutil import copyfile
 from collections import namedtuple
-from cjkvi_ids_unicode.types import CharIDSTuple
 
 # this is a type
 from cjkvi_ids_unicode.driver import CharIDSTuple
 import cjkvi_ids_unicode.constants as constants
+from jinja2 import Environment, FileSystemLoader
 
 
 class MetadataGenerator:
+    RAW_FILE_METADATA_FIELDS = {
+        "resolved": constants.RESOLVED_FILE_PREFIX,
+        "entities_resolved": constants.ENTITIES_RESOLVED_FILE_PREFIX,
+        "manually_resolved": constants.MANUALLY_RESOLVED_FILE_PREFIX,
+        "partially_resolved": constants.ENTITIES_PARTIALLY_RESOLVED_FILE_PREFIX,
+        "manually_partially_resolved": constants.MANUALLY_PARTIALLY_RESOLVED_FILE_PREFIX,
+        "unresolved": constants.UNRESOLVED_FILE_PREFIX,
+        "unresolvable": constants.UNRESOLVABLE_FILE_PREFIX,
+        "totally_unresolvable": constants.TOTALLY_UNRESOLVABLE_FILE_PREFIX
+    }
+
     Entry = namedtuple(
         "Entry",
-        "filename resolved_cnt entities_resolved_cnt partially_resolved_cnt manually_resolved_cnt manually_partially_resolved_cnt totally_unresolvable_cnt resolved_entries entities_resolved_entries manually_resolved_entries partially_resolved_entries manually_partially_resolved_entries unresolved_entries unresolvable_entries original_total",
+        "filename resolved_cnt entities_resolved_cnt partially_resolved_cnt manually_resolved_cnt manually_partially_resolved_cnt totally_unresolvable_cnt resolved_entries entities_resolved_entries manually_resolved_entries partially_resolved_entries manually_partially_resolved_entries unresolved_entries unresolvable_entries totally_unresolvable_entries original_total",
     )
 
     def __init__(self):
@@ -29,6 +41,7 @@ class MetadataGenerator:
         partially_resolved: list[CharIDSTuple],
         manually_resolved: list[CharIDSTuple],
         manually_partially_resolved: list[CharIDSTuple],
+        totally_unresolvable: list[CharIDSTuple],
     ):
         resolved_map = {}
         for (char, ids) in resolved:
@@ -59,6 +72,10 @@ class MetadataGenerator:
         for (char, ids) in unresolvable:
             unresolvable_map[char] = ids
 
+        totally_unresolvable_map = {}
+        for (char, ids) in totally_unresolvable:
+            totally_unresolvable_map[char] = ids
+
         resolved_cnt = 0
         entities_resolved_cnt = 0
         partially_resolved_cnt = 0
@@ -87,9 +104,10 @@ class MetadataGenerator:
         manually_resolved_entries = len(manually_resolved_map)
         partially_resolved_entries = len(partially_resolved_map)
         manually_partially_resolved_entries = len(manually_partially_resolved_map)
-        # including the two files that aren't used in stats calculation
+        # including the three files that aren't used in stats calculation
         unresolved_entries = len(unresolved_map)
         unresolvable_entries = len(unresolvable_map)
+        totally_unresolvable_entries = len(totally_unresolvable_map)
 
         self.map[filename] = MetadataGenerator.Entry(
             filename,
@@ -108,33 +126,105 @@ class MetadataGenerator:
             # two files that aren't used in stats calculation
             unresolved_entries,
             unresolvable_entries,
+            totally_unresolvable_entries,
             len(chars),
         )
 
-    def generate_html(self):
-        pass
-
-    def write_output_metadata_json(self):
-        j = {}
+    def get_metadata(self):
+        j = {"ids_data": {}}
 
         for filename in self.map:
-            j[filename] = {
-                "original_file": constants.ORIGINAL_FILE_PREFIX + filename,
-                "resolved_file": constants.RESOLVED_FILE_PREFIX + filename,
-                "entities_resolved_file": constants.ENTITIES_RESOLVED_FILE_PREFIX
-                + filename,
-                "entities_partially_resolved_file": constants.ENTITIES_PARTIALLY_RESOLVED_FILE_PREFIX
-                + filename,
-                "manually_resolved_file": constants.MANUALLY_RESOLVED_FILE_PREFIX
-                + filename,
-                "manually_partially_resolved_file": constants.MANUALLY_PARTIALLY_RESOLVED_FILE_PREFIX
-                + filename,
-                # the 2 unresolved not used in stats calculation
-                "unresolved_file": constants.UNRESOLVED_FILE_PREFIX + filename,
-                "unresolvable_file": constants.UNRESOLVABLE_FILE_PREFIX + filename,
-                "metadata": self.map[filename]._asdict(),
+            j["ids_data"][filename] = {}
+
+            j["ids_data"][filename]["original"] = {
+                "file": constants.ORIGINAL_FILE_PREFIX + filename,
+                "size": os.path.getsize(
+                    os.path.join(
+                        constants.OUTPUT_DIR, constants.ORIGINAL_FILE_PREFIX + filename
+                    )
+                ),
+                "entries": self.map[filename].original_total,
             }
-        j["ts"] = datetime.datetime.now().isoformat()
+
+            for field in MetadataGenerator.RAW_FILE_METADATA_FIELDS:
+                if getattr(self.map[filename], field + "_entries"):
+                    j["ids_data"][filename][field] = {
+                        "file": MetadataGenerator.RAW_FILE_METADATA_FIELDS[field]
+                        + filename,
+                        "size": os.path.getsize(
+                            os.path.join(
+                                constants.OUTPUT_DIR,
+                                MetadataGenerator.RAW_FILE_METADATA_FIELDS[field]
+                                + filename,
+                            )
+                        ),
+                        "entries": getattr(self.map[filename], field + "_entries"),
+                    }
+
+            internal_dict = self.map[filename]._asdict()
+            for key in list(internal_dict.keys()):
+                if key.endswith("entries"):
+                    del internal_dict[key]
+
+            j["ids_data"][filename]["metadata"] = internal_dict
+
+        j["ts"] = datetime.datetime.utcnow().strftime("%Y%m%dT%H%M%S.%fZ")
+        return j
+
+    def generate_html(self):
+        env = Environment(loader=FileSystemLoader(constants.HTML_TEMPLATE_DIR))
+        template = env.get_template("index.html")
+
+        # metadata = self.get_metadata()
+
+        stats = {}
+        for filename in self.map:
+            stats[filename] = {
+                "k_pc": "{0:.2f}".format(
+                    100
+                    * self.map[filename].resolved_cnt
+                    / self.map[filename].original_total
+                ),
+                "e_pc": "{0:.2f}".format(
+                    100
+                    * self.map[filename].entities_resolved_cnt
+                    / self.map[filename].original_total
+                ),
+                "m_pc": "{0:.2f}".format(
+                    100
+                    * self.map[filename].manually_resolved_cnt
+                    / self.map[filename].original_total
+                ),
+                "p_pc": "{0:.2f}".format(
+                    100
+                    * self.map[filename].partially_resolved_cnt
+                    / self.map[filename].original_total
+                ),
+                "x_pc": "{0:.2f}".format(
+                    100
+                    * self.map[filename].manually_partially_resolved_cnt
+                    / self.map[filename].original_total
+                ),
+                "u_pc": "{0:.2f}".format(
+                    100
+                    * self.map[filename].totally_unresolvable_cnt
+                    / self.map[filename].original_total
+                ),
+            }
+
+        rendered = template.render(stats=stats, complete_metadata=self.get_metadata())
+        with open(os.path.join(constants.OUTPUT_DIR, "index.html"), "w") as f:
+            f.write(rendered)
+
+        f.close()
+
+        copyfile(
+            os.path.join(constants.HTML_TEMPLATE_DIR, "style.css"),
+            os.path.join(constants.OUTPUT_DIR, "style.css"),
+        )
+
+    def write_output_metadata_json(self):
+        j = self.get_metadata()
 
         with open(constants.OUTPUT_METADATA_JSON, "w") as outfile:
-            json.dump(j, outfile)
+            json.dump(j, outfile, indent=4)
