@@ -1,0 +1,710 @@
+{
+    "ids_data": {
+        "IDS-UCS-Basic.txt": {
+            "original": {
+                "file": "ORIGINAL_IDS-UCS-Basic.txt",
+                "size": 447422,
+                "entries": 20976
+            },
+            "resolved": {
+                "file": "RESOLVED_IDS-UCS-Basic.txt",
+                "size": 481969,
+                "entries": 20900
+            },
+            "entities_resolved": {
+                "file": "ENTITIES_RESOLVED_IDS-UCS-Basic.txt",
+                "size": 1586,
+                "entries": 70
+            },
+            "manually_resolved": {
+                "file": "MANUALLY_RESOLVED_IDS-UCS-Basic.txt",
+                "size": 158,
+                "entries": 4
+            },
+            "manually_partially_resolved": {
+                "file": "MANUALLY_PARTIALLY_RESOLVED_IDS-UCS-Basic.txt",
+                "size": 94,
+                "entries": 2
+            },
+            "unresolved": {
+                "file": "UNRESOLVED_IDS-UCS-Basic.txt",
+                "size": 2325,
+                "entries": 76
+            },
+            "unresolvable": {
+                "file": "UNRESOLVABLE_IDS-UCS-Basic.txt",
+                "size": 175,
+                "entries": 6
+            },
+            "metadata": {
+                "filename": "IDS-UCS-Basic.txt",
+                "resolved_cnt": 20900,
+                "entities_resolved_cnt": 70,
+                "partially_resolved_cnt": 0,
+                "manually_resolved_cnt": 4,
+                "manually_partially_resolved_cnt": 2,
+                "totally_unresolvable_cnt": 0,
+                "original_total": 20976
+            }
+        },
+        "IDS-UCS-Compat-Supplement.txt": {
+            "original": {
+                "file": "ORIGINAL_IDS-UCS-Compat-Supplement.txt",
+                "size": 16738,
+                "entries": 542
+            },
+            "resolved": {
+                "file": "RESOLVED_IDS-UCS-Compat-Supplement.txt",
+                "size": 13449,
+                "entries": 536
+            },
+            "entities_resolved": {
+                "file": "ENTITIES_RESOLVED_IDS-UCS-Compat-Supplement.txt",
+                "size": 178,
+                "entries": 6
+            },
+            "unresolved": {
+                "file": "UNRESOLVED_IDS-UCS-Compat-Supplement.txt",
+                "size": 243,
+                "entries": 6
+            },
+            "metadata": {
+                "filename": "IDS-UCS-Compat-Supplement.txt",
+                "resolved_cnt": 536,
+                "entities_resolved_cnt": 6,
+                "partially_resolved_cnt": 0,
+                "manually_resolved_cnt": 0,
+                "manually_partially_resolved_cnt": 0,
+                "totally_unresolvable_cnt": 0,
+                "original_total": 542
+            }
+        },
+        "IDS-UCS-Compat.txt": {
+            "original": {
+                "file": "ORIGINAL_IDS-UCS-Compat.txt",
+                "size": 5467,
+                "entries": 301
+            },
+            "resolved": {
+                "file": "RESOLVED_IDS-UCS-Compat.txt",
+                "size": 6556,
+                "entries": 301
+            },
+            "metadata": {
+                "filename": "IDS-UCS-Compat.txt",
+                "resolved_cnt": 301,
+                "entities_resolved_cnt": 0,
+                "partially_resolved_cnt": 0,
+                "manually_resolved_cnt": 0,
+                "manually_partially_resolved_cnt": 0,
+                "totally_unresolvable_cnt": 0,
+                "original_total": 301
+            }
+        },
+        "IDS-UCS-Ext-A.txt": {
+            "original": {
+                "file": "ORIGINAL_IDS-UCS-Ext-A.txt",
+                "size": 142590,
+                "entries": 6594
+            },
+            "resolved": {
+                "file": "RESOLVED_IDS-UCS-Ext-A.txt",
+                "size": 149106,
+                "entries": 6582
+            },
+            "entities_resolved": {
+                "file": "ENTITIES_RESOLVED_IDS-UCS-Ext-A.txt",
+                "size": 185,
+                "entries": 8
+            },
+            "manually_resolved": {
+                "file": "MANUALLY_RESOLVED_IDS-UCS-Ext-A.txt",
+                "size": 33,
+                "entries": 1
+            },
+            "manually_partially_resolved": {
+                "file": "MANUALLY_PARTIALLY_RESOLVED_IDS-UCS-Ext-A.txt",
+                "size": 141,
+                "entries": 3
+            },
+            "unresolved": {
+                "file": "UNRESOLVED_IDS-UCS-Ext-A.txt",
+                "size": 368,
+                "entries": 12
+            },
+            "unresolvable": {
+                "file": "UNRESOLVABLE_IDS-UCS-Ext-A.txt",
+                "size": 115,
+                "entries": 4
+            },
+            "metadata": {
+                "filename": "IDS-UCS-Ext-A.txt",
+                "resolved_cnt": 6582,
+                "entities_resolved_cnt": 8,
+                "partially_resolved_cnt": 0,
+                "manually_resolved_cnt": 1,
+                "manually_partially_resolved_cnt": 3,
+                "totally_unresolvable_cnt": 0,
+                "original_total": 6594
+            }
+        },
+        "IDS-UCS-Ext-B-1.txt": {
+            "original": {
+                "file": "ORIGINAL_IDS-UCS-Ext-B-1.txt",
+                "size": 241003,
+                "entries": 8192
+            },
+            "resolved": {
+                "file": "RESOLVED_IDS-UCS-Ext-B-1.txt",
+                "size": 203229,
+                "entries": 8051
+            },
+            "entities_resolved": {
+                "file": "ENTITIES_RESOLVED_IDS-UCS-Ext-B-1.txt",
+                "size": 2664,
+                "entries": 95
+            },
+            "manually_resolved": {
+                "file": "MANUALLY_RESOLVED_IDS-UCS-Ext-B-1.txt",
+                "size": 987,
+                "entries": 24
+            },
+            "partially_resolved": {
+                "file": "ENTITIES_PARTIALLY_RESOLVED_IDS-UCS-Ext-B-1.txt",
+                "size": 193,
+                "entries": 5
+            },
+            "manually_partially_resolved": {
+                "file": "MANUALLY_PARTIALLY_RESOLVED_IDS-UCS-Ext-B-1.txt",
+                "size": 283,
+                "entries": 6
+            },
+            "unresolved": {
+                "file": "UNRESOLVED_IDS-UCS-Ext-B-1.txt",
+                "size": 4888,
+                "entries": 141
+            },
+            "unresolvable": {
+                "file": "UNRESOLVABLE_IDS-UCS-Ext-B-1.txt",
+                "size": 1264,
+                "entries": 41
+            },
+            "totally_unresolvable": {
+                "file": "TOTALLY_UNRESOLVABLE_IDS-UCS-Ext-B-1.txt",
+                "size": 333,
+                "entries": 15
+            },
+            "metadata": {
+                "filename": "IDS-UCS-Ext-B-1.txt",
+                "resolved_cnt": 8051,
+                "entities_resolved_cnt": 95,
+                "partially_resolved_cnt": 1,
+                "manually_resolved_cnt": 24,
+                "manually_partially_resolved_cnt": 6,
+                "totally_unresolvable_cnt": 15,
+                "original_total": 8192
+            }
+        },
+        "IDS-UCS-Ext-B-2.txt": {
+            "original": {
+                "file": "ORIGINAL_IDS-UCS-Ext-B-2.txt",
+                "size": 239574,
+                "entries": 8192
+            },
+            "resolved": {
+                "file": "RESOLVED_IDS-UCS-Ext-B-2.txt",
+                "size": 204947,
+                "entries": 8099
+            },
+            "entities_resolved": {
+                "file": "ENTITIES_RESOLVED_IDS-UCS-Ext-B-2.txt",
+                "size": 2068,
+                "entries": 72
+            },
+            "manually_resolved": {
+                "file": "MANUALLY_RESOLVED_IDS-UCS-Ext-B-2.txt",
+                "size": 443,
+                "entries": 11
+            },
+            "partially_resolved": {
+                "file": "ENTITIES_PARTIALLY_RESOLVED_IDS-UCS-Ext-B-2.txt",
+                "size": 118,
+                "entries": 3
+            },
+            "manually_partially_resolved": {
+                "file": "MANUALLY_PARTIALLY_RESOLVED_IDS-UCS-Ext-B-2.txt",
+                "size": 237,
+                "entries": 4
+            },
+            "unresolved": {
+                "file": "UNRESOLVED_IDS-UCS-Ext-B-2.txt",
+                "size": 3327,
+                "entries": 93
+            },
+            "unresolvable": {
+                "file": "UNRESOLVABLE_IDS-UCS-Ext-B-2.txt",
+                "size": 526,
+                "entries": 18
+            },
+            "totally_unresolvable": {
+                "file": "TOTALLY_UNRESOLVABLE_IDS-UCS-Ext-B-2.txt",
+                "size": 126,
+                "entries": 6
+            },
+            "metadata": {
+                "filename": "IDS-UCS-Ext-B-2.txt",
+                "resolved_cnt": 8099,
+                "entities_resolved_cnt": 72,
+                "partially_resolved_cnt": 0,
+                "manually_resolved_cnt": 11,
+                "manually_partially_resolved_cnt": 4,
+                "totally_unresolvable_cnt": 6,
+                "original_total": 8192
+            }
+        },
+        "IDS-UCS-Ext-B-3.txt": {
+            "original": {
+                "file": "ORIGINAL_IDS-UCS-Ext-B-3.txt",
+                "size": 236894,
+                "entries": 8192
+            },
+            "resolved": {
+                "file": "RESOLVED_IDS-UCS-Ext-B-3.txt",
+                "size": 201872,
+                "entries": 8116
+            },
+            "entities_resolved": {
+                "file": "ENTITIES_RESOLVED_IDS-UCS-Ext-B-3.txt",
+                "size": 1396,
+                "entries": 47
+            },
+            "manually_resolved": {
+                "file": "MANUALLY_RESOLVED_IDS-UCS-Ext-B-3.txt",
+                "size": 595,
+                "entries": 12
+            },
+            "partially_resolved": {
+                "file": "ENTITIES_PARTIALLY_RESOLVED_IDS-UCS-Ext-B-3.txt",
+                "size": 140,
+                "entries": 3
+            },
+            "manually_partially_resolved": {
+                "file": "MANUALLY_PARTIALLY_RESOLVED_IDS-UCS-Ext-B-3.txt",
+                "size": 415,
+                "entries": 8
+            },
+            "unresolved": {
+                "file": "UNRESOLVED_IDS-UCS-Ext-B-3.txt",
+                "size": 2718,
+                "entries": 76
+            },
+            "unresolvable": {
+                "file": "UNRESOLVABLE_IDS-UCS-Ext-B-3.txt",
+                "size": 818,
+                "entries": 27
+            },
+            "totally_unresolvable": {
+                "file": "TOTALLY_UNRESOLVABLE_IDS-UCS-Ext-B-3.txt",
+                "size": 229,
+                "entries": 9
+            },
+            "metadata": {
+                "filename": "IDS-UCS-Ext-B-3.txt",
+                "resolved_cnt": 8116,
+                "entities_resolved_cnt": 47,
+                "partially_resolved_cnt": 2,
+                "manually_resolved_cnt": 12,
+                "manually_partially_resolved_cnt": 6,
+                "totally_unresolvable_cnt": 9,
+                "original_total": 8192
+            }
+        },
+        "IDS-UCS-Ext-B-4.txt": {
+            "original": {
+                "file": "ORIGINAL_IDS-UCS-Ext-B-4.txt",
+                "size": 236455,
+                "entries": 8192
+            },
+            "resolved": {
+                "file": "RESOLVED_IDS-UCS-Ext-B-4.txt",
+                "size": 201208,
+                "entries": 8094
+            },
+            "entities_resolved": {
+                "file": "ENTITIES_RESOLVED_IDS-UCS-Ext-B-4.txt",
+                "size": 1996,
+                "entries": 69
+            },
+            "manually_resolved": {
+                "file": "MANUALLY_RESOLVED_IDS-UCS-Ext-B-4.txt",
+                "size": 556,
+                "entries": 12
+            },
+            "partially_resolved": {
+                "file": "ENTITIES_PARTIALLY_RESOLVED_IDS-UCS-Ext-B-4.txt",
+                "size": 166,
+                "entries": 5
+            },
+            "manually_partially_resolved": {
+                "file": "MANUALLY_PARTIALLY_RESOLVED_IDS-UCS-Ext-B-4.txt",
+                "size": 248,
+                "entries": 5
+            },
+            "unresolved": {
+                "file": "UNRESOLVED_IDS-UCS-Ext-B-4.txt",
+                "size": 3522,
+                "entries": 98
+            },
+            "unresolvable": {
+                "file": "UNRESOLVABLE_IDS-UCS-Ext-B-4.txt",
+                "size": 751,
+                "entries": 24
+            },
+            "totally_unresolvable": {
+                "file": "TOTALLY_UNRESOLVABLE_IDS-UCS-Ext-B-4.txt",
+                "size": 248,
+                "entries": 10
+            },
+            "metadata": {
+                "filename": "IDS-UCS-Ext-B-4.txt",
+                "resolved_cnt": 8094,
+                "entities_resolved_cnt": 69,
+                "partially_resolved_cnt": 2,
+                "manually_resolved_cnt": 12,
+                "manually_partially_resolved_cnt": 5,
+                "totally_unresolvable_cnt": 10,
+                "original_total": 8192
+            }
+        },
+        "IDS-UCS-Ext-B-5.txt": {
+            "original": {
+                "file": "ORIGINAL_IDS-UCS-Ext-B-5.txt",
+                "size": 234074,
+                "entries": 8192
+            },
+            "resolved": {
+                "file": "RESOLVED_IDS-UCS-Ext-B-5.txt",
+                "size": 199827,
+                "entries": 8125
+            },
+            "entities_resolved": {
+                "file": "ENTITIES_RESOLVED_IDS-UCS-Ext-B-5.txt",
+                "size": 1548,
+                "entries": 53
+            },
+            "manually_resolved": {
+                "file": "MANUALLY_RESOLVED_IDS-UCS-Ext-B-5.txt",
+                "size": 331,
+                "entries": 7
+            },
+            "partially_resolved": {
+                "file": "ENTITIES_PARTIALLY_RESOLVED_IDS-UCS-Ext-B-5.txt",
+                "size": 42,
+                "entries": 1
+            },
+            "manually_partially_resolved": {
+                "file": "MANUALLY_PARTIALLY_RESOLVED_IDS-UCS-Ext-B-5.txt",
+                "size": 263,
+                "entries": 5
+            },
+            "unresolved": {
+                "file": "UNRESOLVED_IDS-UCS-Ext-B-5.txt",
+                "size": 2508,
+                "entries": 67
+            },
+            "unresolvable": {
+                "file": "UNRESOLVABLE_IDS-UCS-Ext-B-5.txt",
+                "size": 439,
+                "entries": 13
+            },
+            "totally_unresolvable": {
+                "file": "TOTALLY_UNRESOLVABLE_IDS-UCS-Ext-B-5.txt",
+                "size": 69,
+                "entries": 3
+            },
+            "metadata": {
+                "filename": "IDS-UCS-Ext-B-5.txt",
+                "resolved_cnt": 8125,
+                "entities_resolved_cnt": 53,
+                "partially_resolved_cnt": 0,
+                "manually_resolved_cnt": 7,
+                "manually_partially_resolved_cnt": 4,
+                "totally_unresolvable_cnt": 3,
+                "original_total": 8192
+            }
+        },
+        "IDS-UCS-Ext-B-6.txt": {
+            "original": {
+                "file": "ORIGINAL_IDS-UCS-Ext-B-6.txt",
+                "size": 48862,
+                "entries": 1751
+            },
+            "resolved": {
+                "file": "RESOLVED_IDS-UCS-Ext-B-6.txt",
+                "size": 41884,
+                "entries": 1727
+            },
+            "entities_resolved": {
+                "file": "ENTITIES_RESOLVED_IDS-UCS-Ext-B-6.txt",
+                "size": 449,
+                "entries": 18
+            },
+            "manually_resolved": {
+                "file": "MANUALLY_RESOLVED_IDS-UCS-Ext-B-6.txt",
+                "size": 41,
+                "entries": 1
+            },
+            "partially_resolved": {
+                "file": "ENTITIES_PARTIALLY_RESOLVED_IDS-UCS-Ext-B-6.txt",
+                "size": 79,
+                "entries": 2
+            },
+            "manually_partially_resolved": {
+                "file": "MANUALLY_PARTIALLY_RESOLVED_IDS-UCS-Ext-B-6.txt",
+                "size": 369,
+                "entries": 5
+            },
+            "unresolved": {
+                "file": "UNRESOLVED_IDS-UCS-Ext-B-6.txt",
+                "size": 802,
+                "entries": 24
+            },
+            "unresolvable": {
+                "file": "UNRESOLVABLE_IDS-UCS-Ext-B-6.txt",
+                "size": 112,
+                "entries": 4
+            },
+            "metadata": {
+                "filename": "IDS-UCS-Ext-B-6.txt",
+                "resolved_cnt": 1727,
+                "entities_resolved_cnt": 18,
+                "partially_resolved_cnt": 2,
+                "manually_resolved_cnt": 1,
+                "manually_partially_resolved_cnt": 3,
+                "totally_unresolvable_cnt": 0,
+                "original_total": 1751
+            }
+        },
+        "IDS-UCS-Ext-C.txt": {
+            "original": {
+                "file": "ORIGINAL_IDS-UCS-Ext-C.txt",
+                "size": 112564,
+                "entries": 4149
+            },
+            "resolved": {
+                "file": "RESOLVED_IDS-UCS-Ext-C.txt",
+                "size": 99832,
+                "entries": 4147
+            },
+            "entities_resolved": {
+                "file": "ENTITIES_RESOLVED_IDS-UCS-Ext-C.txt",
+                "size": 61,
+                "entries": 2
+            },
+            "unresolved": {
+                "file": "UNRESOLVED_IDS-UCS-Ext-C.txt",
+                "size": 75,
+                "entries": 2
+            },
+            "metadata": {
+                "filename": "IDS-UCS-Ext-C.txt",
+                "resolved_cnt": 4147,
+                "entities_resolved_cnt": 2,
+                "partially_resolved_cnt": 0,
+                "manually_resolved_cnt": 0,
+                "manually_partially_resolved_cnt": 0,
+                "totally_unresolvable_cnt": 0,
+                "original_total": 4149
+            }
+        },
+        "IDS-UCS-Ext-D.txt": {
+            "original": {
+                "file": "ORIGINAL_IDS-UCS-Ext-D.txt",
+                "size": 6764,
+                "entries": 222
+            },
+            "resolved": {
+                "file": "RESOLVED_IDS-UCS-Ext-D.txt",
+                "size": 5421,
+                "entries": 216
+            },
+            "entities_resolved": {
+                "file": "ENTITIES_RESOLVED_IDS-UCS-Ext-D.txt",
+                "size": 134,
+                "entries": 5
+            },
+            "manually_resolved": {
+                "file": "MANUALLY_RESOLVED_IDS-UCS-Ext-D.txt",
+                "size": 36,
+                "entries": 1
+            },
+            "unresolved": {
+                "file": "UNRESOLVED_IDS-UCS-Ext-D.txt",
+                "size": 206,
+                "entries": 6
+            },
+            "unresolvable": {
+                "file": "UNRESOLVABLE_IDS-UCS-Ext-D.txt",
+                "size": 36,
+                "entries": 1
+            },
+            "metadata": {
+                "filename": "IDS-UCS-Ext-D.txt",
+                "resolved_cnt": 216,
+                "entities_resolved_cnt": 5,
+                "partially_resolved_cnt": 0,
+                "manually_resolved_cnt": 1,
+                "manually_partially_resolved_cnt": 0,
+                "totally_unresolvable_cnt": 0,
+                "original_total": 222
+            }
+        },
+        "IDS-UCS-Ext-E.txt": {
+            "original": {
+                "file": "ORIGINAL_IDS-UCS-Ext-E.txt",
+                "size": 140623,
+                "entries": 5762
+            },
+            "resolved": {
+                "file": "RESOLVED_IDS-UCS-Ext-E.txt",
+                "size": 139434,
+                "entries": 5731
+            },
+            "entities_resolved": {
+                "file": "ENTITIES_RESOLVED_IDS-UCS-Ext-E.txt",
+                "size": 652,
+                "entries": 22
+            },
+            "manually_resolved": {
+                "file": "MANUALLY_RESOLVED_IDS-UCS-Ext-E.txt",
+                "size": 326,
+                "entries": 7
+            },
+            "partially_resolved": {
+                "file": "ENTITIES_PARTIALLY_RESOLVED_IDS-UCS-Ext-E.txt",
+                "size": 131,
+                "entries": 3
+            },
+            "manually_partially_resolved": {
+                "file": "MANUALLY_PARTIALLY_RESOLVED_IDS-UCS-Ext-E.txt",
+                "size": 115,
+                "entries": 2
+            },
+            "unresolved": {
+                "file": "UNRESOLVED_IDS-UCS-Ext-E.txt",
+                "size": 1153,
+                "entries": 31
+            },
+            "unresolvable": {
+                "file": "UNRESOLVABLE_IDS-UCS-Ext-E.txt",
+                "size": 177,
+                "entries": 6
+            },
+            "metadata": {
+                "filename": "IDS-UCS-Ext-E.txt",
+                "resolved_cnt": 5731,
+                "entities_resolved_cnt": 22,
+                "partially_resolved_cnt": 0,
+                "manually_resolved_cnt": 7,
+                "manually_partially_resolved_cnt": 2,
+                "totally_unresolvable_cnt": 0,
+                "original_total": 5762
+            }
+        },
+        "IDS-UCS-Ext-F.txt": {
+            "original": {
+                "file": "ORIGINAL_IDS-UCS-Ext-F.txt",
+                "size": 208526,
+                "entries": 7473
+            },
+            "resolved": {
+                "file": "RESOLVED_IDS-UCS-Ext-F.txt",
+                "size": 182952,
+                "entries": 7335
+            },
+            "entities_resolved": {
+                "file": "ENTITIES_RESOLVED_IDS-UCS-Ext-F.txt",
+                "size": 2128,
+                "entries": 77
+            },
+            "manually_resolved": {
+                "file": "MANUALLY_RESOLVED_IDS-UCS-Ext-F.txt",
+                "size": 3160,
+                "entries": 82
+            },
+            "partially_resolved": {
+                "file": "ENTITIES_PARTIALLY_RESOLVED_IDS-UCS-Ext-F.txt",
+                "size": 665,
+                "entries": 19
+            },
+            "manually_partially_resolved": {
+                "file": "MANUALLY_PARTIALLY_RESOLVED_IDS-UCS-Ext-F.txt",
+                "size": 2664,
+                "entries": 56
+            },
+            "unresolved": {
+                "file": "UNRESOLVED_IDS-UCS-Ext-F.txt",
+                "size": 5069,
+                "entries": 138
+            },
+            "unresolvable": {
+                "file": "UNRESOLVABLE_IDS-UCS-Ext-F.txt",
+                "size": 1299,
+                "entries": 42
+            },
+            "metadata": {
+                "filename": "IDS-UCS-Ext-F.txt",
+                "resolved_cnt": 7335,
+                "entities_resolved_cnt": 77,
+                "partially_resolved_cnt": 3,
+                "manually_resolved_cnt": 48,
+                "manually_partially_resolved_cnt": 10,
+                "totally_unresolvable_cnt": 0,
+                "original_total": 7473
+            }
+        },
+        "IDS-UCS-Ext-G.txt": {
+            "original": {
+                "file": "ORIGINAL_IDS-UCS-Ext-G.txt",
+                "size": 118064,
+                "entries": 4939
+            },
+            "resolved": {
+                "file": "RESOLVED_IDS-UCS-Ext-G.txt",
+                "size": 117308,
+                "entries": 4917
+            },
+            "entities_resolved": {
+                "file": "ENTITIES_RESOLVED_IDS-UCS-Ext-G.txt",
+                "size": 495,
+                "entries": 19
+            },
+            "manually_resolved": {
+                "file": "MANUALLY_RESOLVED_IDS-UCS-Ext-G.txt",
+                "size": 82,
+                "entries": 3
+            },
+            "unresolved": {
+                "file": "UNRESOLVED_IDS-UCS-Ext-G.txt",
+                "size": 724,
+                "entries": 22
+            },
+            "unresolvable": {
+                "file": "UNRESOLVABLE_IDS-UCS-Ext-G.txt",
+                "size": 85,
+                "entries": 3
+            },
+            "metadata": {
+                "filename": "IDS-UCS-Ext-G.txt",
+                "resolved_cnt": 4917,
+                "entities_resolved_cnt": 19,
+                "partially_resolved_cnt": 0,
+                "manually_resolved_cnt": 3,
+                "manually_partially_resolved_cnt": 0,
+                "totally_unresolvable_cnt": 0,
+                "original_total": 4939
+            }
+        }
+    },
+    "ts": "20210122T170006.789575Z"
+}
