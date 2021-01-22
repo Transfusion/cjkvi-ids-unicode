@@ -4,3 +4,6 @@
 [submodule "rawdata/cjkvi-ids"]
 	path = rawdata/cjkvi-ids
 	url = https://github.com/cjkvi/cjkvi-ids
+[submodule "rawdata/xemacs-chise"]
+	path = rawdata/xemacs-chise
+	url = https://gitlab.chise.org/CHISE/xemacs-chise.git
