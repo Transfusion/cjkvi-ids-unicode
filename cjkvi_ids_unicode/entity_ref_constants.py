@@ -1,5 +1,9 @@
 ALIAS_PREFIX = "A-"
 
+R_PREFIX = "R-"
+
+COMPU_PREFIX = "compU+"
+
 CDP_PREFIX = "CDP-"
 UCS_PREFIX = "U-"
 AJ1_PREFIX = "AJ1-"

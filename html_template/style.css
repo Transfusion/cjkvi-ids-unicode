@@ -74,63 +74,7 @@ a:hover {
   margin: 15px;
 } */
 
-.k {
-  font-size: 12pt;
-  display: inline-block;
-  width: 25px;
-  height: 25px;
-  border: 2px solid #e53935;
-  border-radius: 50px;
-  color: #e53935;
-  text-align: center;
-  line-height: 26px;
-  margin-right: 5px;
-  margin-bottom: 5px;
-}
-
-.e {
-  font-size: 12pt;
-  display: inline-block;
-  width: 25px;
-  height: 25px;
-  border: 2px solid #8e24aa;
-  border-radius: 50px;
-  color: #8e24aa;
-  text-align: center;
-  line-height: 26px;
-  margin-right: 5px;
-  margin-bottom: 5px;
-}
-
-.m {
-  font-size: 12pt;
-  display: inline-block;
-  width: 25px;
-  height: 25px;
-  border: 2px solid #3949ab;
-  border-radius: 50px;
-  color: #3949ab;
-  text-align: center;
-  line-height: 26px;
-  margin-right: 5px;
-  margin-bottom: 5px;
-}
-
-.p {
-  font-size: 12pt;
-  display: inline-block;
-  width: 25px;
-  height: 25px;
-  border: 2px solid #039be5;
-  border-radius: 50px;
-  color: #039be5;
-  text-align: center;
-  line-height: 26px;
-  margin-right: 5px;
-  margin-bottom: 5px;
-}
-
-.x {
+.g{
   font-size: 12pt;
   display: inline-block;
   width: 25px;
@@ -144,14 +88,14 @@ a:hover {
   margin-bottom: 5px;
 }
 
-.u {
+.ng {
   font-size: 12pt;
   display: inline-block;
   width: 25px;
   height: 25px;
-  border: 2px solid #000000;
+  border: 2px solid #e53935;
   border-radius: 50px;
-  color: #000000;
+  color: #e53935;
   text-align: center;
   line-height: 26px;
   margin-right: 5px;

@@ -1,13 +1,16 @@
 from cjkvi_ids_unicode import __version__
-import pytest
+
+# import pytest
 import cjkvi_ids_unicode.utils as utils
-import cjkvi_ids_unicode.driver as driver
-import cjkvi_ids_unicode.constants as constants
+
+# import cjkvi_ids_unicode.driver as driver
+
+# import cjkvi_ids_unicode.constants as constants
 
 
-@pytest.fixture(scope="session", autouse=True)
-def init(request):
-    driver.init_raw_data()
+# @pytest.fixture(scope="session", autouse=True)
+# def init(request):
+#     driver.init_raw_data()
 
 
 def test_version():
@@ -26,12 +29,9 @@ def test_ucs_to_glyphwiki_key():
     assert utils.convert_ucs_to_glyphwiki_key("U+7680") == "u7680"
 
 
-def test_glyphwiki_resolution():
-    glyphwiki = driver.GlyphWiki(constants.GLYPHWIKI_VARIANT_INFO)
-    assert glyphwiki.resolve("aj1-02177") == "山"
-    assert glyphwiki.resolve("aj1-03708") == "卜"
-    assert glyphwiki.resolve("cdp-8cc6") == "亡"
-    assert glyphwiki.resolve("cdp-86d6-itaiji-001") == "黽"
-    assert glyphwiki.resolve("u2d94d-itaiji-001") == "𭥍"
-    assert glyphwiki.resolve("gt-k00880") == "虍"
-    assert glyphwiki.resolve("gt-k01770") == "𤰔"
+def test_is_valid_ids():
+    assert not utils.is_valid_ids("⿰馬⿱𠂉⿸#(丿㇄>)⿺乀丿")
+
+
+# Moved into test_entity_resolution.py
+# def test_glyphwiki_resolution():

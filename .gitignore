@@ -6,7 +6,7 @@ __pycache__/
 *$py.class
 
 # raw data that should be downloaded
-rawdata/mj/
+# rawdata/mj/
 rawdata/glyphwiki
 
 output/

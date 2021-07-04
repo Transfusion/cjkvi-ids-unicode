@@ -1,105 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Unicode CJKV Unified Ideographs IDS Database</title>
-<meta name="description"
-    content="A CJKV Unified Ideographs IDS database that strives to express all IDS using Unicode characters">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Unicode CJKV Unified Ideographs IDS Database</title>
+  <meta
+    name="description"
+    content="A CJKV Unified Ideographs IDS database that strives to express all IDS using Unicode characters"
+  />
 
-<link rel="stylesheet" href="style.css" />
-
+  <link rel="stylesheet" href="style.css" />
 </html>
 
 <body>
-    <div class="island">
-        <h1>CJKV Unified Ideographs IDS Database</h1>
-        <h3>Legend</h3>
-        <div>
-            <span class="k">K</span>
-            Exists in Kawabata's repo
-        </div>
+  <div class="island">
+    <h1>CJKV Unified Ideographs IDS Database</h1>
+    <h3>Legend</h3>
+    <div>
+      <span class="g">G</span>
+      Has at least one complete IDS
+    </div>
 
-        <div>
-            <span class="e">E</span>
-            After entity replacement
-        </div>
+    <div>
+      <span class="ng">NG</span>
+      All IDSs available are incomplete
+    </div>
 
-        <div>
-            <span class="m">M</span>
-            Manual
-        </div>
+    <h3>Metadata</h3>
 
-        <div>
-            <span class="p">P</span>
-            Only resolution available is partial
-        </div>
+    <div class="subtext">For machine consumption</div>
+    <div class="file-entry">
+      <div>
+        <a href="{{metadata_json_name}}">{{metadata_json_name}}</a>
+      </div>
+      <span>{{metadata_source_cnt}} source IDS files</span>
 
-        <div>
-            <span class="x">X</span>
-            Manual and partial
-        </div>
+      <span>{{"{0:.2f}".format(metadata_json_size / 1024)}} KB</span>
+    </div>
 
-        <div>
-            <span class="u">U</span>
-            All entity references remain unresolved
-        </div>
+    {% for ids_filename, ids_data in complete_metadata['ids_data'].items() %}
+    <h3>{{ ids_filename }}</h3>
+    <div class="stats">
+      <div class="stats-cell">
+        <span class="g">G</span>
+        {{stats[ids_filename]["g_pc"] }}%
+      </div>
+      <div class="stats-cell">
+        <span class="ng">NG</span>
+        {{stats[ids_filename]["ng_pc"] }}%
+      </div>
+    </div>
 
-        <h3>Metadata</h3>
+    <!-- <div class="divider"></div> -->
 
-        <div class="subtext">For machine consumption</div>
-        <div class="file-entry">
-            <div>
-                <a href="{{metadata_json_name}}">{{metadata_json_name}}</a>
-            </div>
-            <span>{{metadata_source_cnt}} source IDS files</span>
+    {% for key, val in ids_data.items() if "metadata" not in key %}
+    <div class="file-entry">
+      <div>
+        <a href="{{val['file']}}">{{val["file"]}}</a>
+      </div>
 
-            <span>{{"{0:.2f}".format(metadata_json_size / 1024)}} KB</span>
-        </div>
+      <span>{{val["entries"]}} entries</span>
 
-        {% for ids_filename, ids_data in complete_metadata['ids_data'].items() %}
-        <h3>{{ ids_filename }}</h3>
-        <div class="stats">
-            <div class="stats-cell">
-                <span class="k">K</span>
-                {{stats[ids_filename]["k_pc"] }}%
-            </div>
-            <div class="stats-cell">
-                <span class="e">E</span>
-                {{stats[ids_filename]["e_pc"] }}%
-            </div>
-            <div class="stats-cell">
-                <span class="m">M</span>
-                {{stats[ids_filename]["m_pc"] }}%
-            </div>
-            <div class="stats-cell">
-                <span class="p">P</span>
-                {{stats[ids_filename]["p_pc"] }}%
-            </div>
-            <div class="stats-cell">
-                <span class="x">X</span>
-                {{stats[ids_filename]["x_pc"] }}%
-            </div>
-            <div class="stats-cell">
-                <span class="u">U</span>
-                {{stats[ids_filename]["u_pc"] }}%
-            </div>
-        </div>
-
-        <!-- <div class="divider"></div> -->
-
-        {% for key, val in ids_data.items() if "metadata" not in key %}
-        <div class="file-entry">
-            <div>
-                <a href="{{val['file']}}">{{val["file"]}}</a>
-            </div>
-
-            <span>{{val["entries"]}} entries</span>
-
-            <span>{{"{0:.2f}".format(val["size"] / 1024)}} KB</span>
-        </div>
-        {% endfor %}
-        {% endfor %}
-        <!-- <h3><a href="asdfjoi">IDS-UCS-Basic.txt</a></h3>
+      <span>{{"{0:.2f}".format(val["size"] / 1024)}} KB</span>
+    </div>
+    {% endfor %} {% endfor %}
+    <!-- <h3><a href="asdfjoi">IDS-UCS-Basic.txt</a></h3>
 
         <div class="stats">
             <div class="stats-cell">
@@ -209,14 +173,15 @@
 
             <span>12.3 MB</span>
         </div> -->
+  </div>
 
-        
+  <div class="island subtext">
+    <div>Curated by Bryan Kok.</div>
+    <div>
+      Feedback welcome on
+      <a href="https://github.com/Transfusion/cjkvi-ids-unicode">GitHub</a>.
     </div>
 
-    <div class="island subtext">
-        <div>Curated by Bryan Kok.</div>
-        <div>Feedback welcome on <a href="https://github.com/Transfusion/cjkvi-ids-unicode">GitHub</a>.</div>
-
-        <div>Generated on <code>{{complete_metadata["ts"]}}</code></div>
-    </div>
+    <div>Generated on <code>{{complete_metadata["ts"]}}</code></div>
+  </div>
 </body>
