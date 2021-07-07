@@ -1,0 +1,335 @@
+{
+    "ids_data": {
+        "IDS-UCS-Basic.txt": {
+            "original": {
+                "file": "ORIGINAL_IDS-UCS-Basic.txt",
+                "size": 447188,
+                "entries": 20976
+            },
+            "resolved": {
+                "file": "RESOLVED_IDS-UCS-Basic.txt",
+                "size": 522274,
+                "entries": 20976
+            },
+            "partially_resolved": {
+                "file": "PARTIALLY_RESOLVED_IDS-UCS-Basic.txt",
+                "size": 522274,
+                "entries": 194
+            },
+            "no_full_resolution": {
+                "file": "NO_FULL_RESOLUTION_IDS-UCS-Basic.json",
+                "size": 2,
+                "entries": 0
+            }
+        },
+        "IDS-UCS-Compat-Supplement.txt": {
+            "original": {
+                "file": "ORIGINAL_IDS-UCS-Compat-Supplement.txt",
+                "size": 16738,
+                "entries": 542
+            },
+            "resolved": {
+                "file": "RESOLVED_IDS-UCS-Compat-Supplement.txt",
+                "size": 14985,
+                "entries": 542
+            },
+            "partially_resolved": {
+                "file": "PARTIALLY_RESOLVED_IDS-UCS-Compat-Supplement.txt",
+                "size": 14985,
+                "entries": 30
+            },
+            "no_full_resolution": {
+                "file": "NO_FULL_RESOLUTION_IDS-UCS-Compat-Supplement.json",
+                "size": 2,
+                "entries": 0
+            }
+        },
+        "IDS-UCS-Compat.txt": {
+            "original": {
+                "file": "ORIGINAL_IDS-UCS-Compat.txt",
+                "size": 5278,
+                "entries": 291
+            },
+            "resolved": {
+                "file": "RESOLVED_IDS-UCS-Compat.txt",
+                "size": 8316,
+                "entries": 291
+            },
+            "partially_resolved": {
+                "file": "PARTIALLY_RESOLVED_IDS-UCS-Compat.txt",
+                "size": 8316,
+                "entries": 7
+            },
+            "no_full_resolution": {
+                "file": "NO_FULL_RESOLUTION_IDS-UCS-Compat.json",
+                "size": 2,
+                "entries": 0
+            }
+        },
+        "IDS-UCS-Ext-A.txt": {
+            "original": {
+                "file": "ORIGINAL_IDS-UCS-Ext-A.txt",
+                "size": 142311,
+                "entries": 6604
+            },
+            "resolved": {
+                "file": "RESOLVED_IDS-UCS-Ext-A.txt",
+                "size": 162585,
+                "entries": 6604
+            },
+            "partially_resolved": {
+                "file": "PARTIALLY_RESOLVED_IDS-UCS-Ext-A.txt",
+                "size": 162585,
+                "entries": 40
+            },
+            "no_full_resolution": {
+                "file": "NO_FULL_RESOLUTION_IDS-UCS-Ext-A.json",
+                "size": 2,
+                "entries": 0
+            }
+        },
+        "IDS-UCS-Ext-B-1.txt": {
+            "original": {
+                "file": "ORIGINAL_IDS-UCS-Ext-B-1.txt",
+                "size": 240255,
+                "entries": 8192
+            },
+            "resolved": {
+                "file": "RESOLVED_IDS-UCS-Ext-B-1.txt",
+                "size": 238229,
+                "entries": 8172
+            },
+            "partially_resolved": {
+                "file": "PARTIALLY_RESOLVED_IDS-UCS-Ext-B-1.txt",
+                "size": 238229,
+                "entries": 312
+            },
+            "no_full_resolution": {
+                "file": "NO_FULL_RESOLUTION_IDS-UCS-Ext-B-1.json",
+                "size": 1442,
+                "entries": 20
+            }
+        },
+        "IDS-UCS-Ext-B-2.txt": {
+            "original": {
+                "file": "ORIGINAL_IDS-UCS-Ext-B-2.txt",
+                "size": 239124,
+                "entries": 8192
+            },
+            "resolved": {
+                "file": "RESOLVED_IDS-UCS-Ext-B-2.txt",
+                "size": 237204,
+                "entries": 8183
+            },
+            "partially_resolved": {
+                "file": "PARTIALLY_RESOLVED_IDS-UCS-Ext-B-2.txt",
+                "size": 237204,
+                "entries": 237
+            },
+            "no_full_resolution": {
+                "file": "NO_FULL_RESOLUTION_IDS-UCS-Ext-B-2.json",
+                "size": 667,
+                "entries": 9
+            }
+        },
+        "IDS-UCS-Ext-B-3.txt": {
+            "original": {
+                "file": "ORIGINAL_IDS-UCS-Ext-B-3.txt",
+                "size": 236352,
+                "entries": 8192
+            },
+            "resolved": {
+                "file": "RESOLVED_IDS-UCS-Ext-B-3.txt",
+                "size": 239747,
+                "entries": 8176
+            },
+            "partially_resolved": {
+                "file": "PARTIALLY_RESOLVED_IDS-UCS-Ext-B-3.txt",
+                "size": 239747,
+                "entries": 203
+            },
+            "no_full_resolution": {
+                "file": "NO_FULL_RESOLUTION_IDS-UCS-Ext-B-3.json",
+                "size": 1444,
+                "entries": 16
+            }
+        },
+        "IDS-UCS-Ext-B-4.txt": {
+            "original": {
+                "file": "ORIGINAL_IDS-UCS-Ext-B-4.txt",
+                "size": 236316,
+                "entries": 8192
+            },
+            "resolved": {
+                "file": "RESOLVED_IDS-UCS-Ext-B-4.txt",
+                "size": 242284,
+                "entries": 8178
+            },
+            "partially_resolved": {
+                "file": "PARTIALLY_RESOLVED_IDS-UCS-Ext-B-4.txt",
+                "size": 242284,
+                "entries": 215
+            },
+            "no_full_resolution": {
+                "file": "NO_FULL_RESOLUTION_IDS-UCS-Ext-B-4.json",
+                "size": 997,
+                "entries": 14
+            }
+        },
+        "IDS-UCS-Ext-B-5.txt": {
+            "original": {
+                "file": "ORIGINAL_IDS-UCS-Ext-B-5.txt",
+                "size": 233239,
+                "entries": 8192
+            },
+            "resolved": {
+                "file": "RESOLVED_IDS-UCS-Ext-B-5.txt",
+                "size": 230530,
+                "entries": 8185
+            },
+            "partially_resolved": {
+                "file": "PARTIALLY_RESOLVED_IDS-UCS-Ext-B-5.txt",
+                "size": 230530,
+                "entries": 135
+            },
+            "no_full_resolution": {
+                "file": "NO_FULL_RESOLUTION_IDS-UCS-Ext-B-5.json",
+                "size": 625,
+                "entries": 7
+            }
+        },
+        "IDS-UCS-Ext-B-6.txt": {
+            "original": {
+                "file": "ORIGINAL_IDS-UCS-Ext-B-6.txt",
+                "size": 48764,
+                "entries": 1751
+            },
+            "resolved": {
+                "file": "RESOLVED_IDS-UCS-Ext-B-6.txt",
+                "size": 46655,
+                "entries": 1747
+            },
+            "partially_resolved": {
+                "file": "PARTIALLY_RESOLVED_IDS-UCS-Ext-B-6.txt",
+                "size": 46655,
+                "entries": 34
+            },
+            "no_full_resolution": {
+                "file": "NO_FULL_RESOLUTION_IDS-UCS-Ext-B-6.json",
+                "size": 598,
+                "entries": 4
+            }
+        },
+        "IDS-UCS-Ext-C.txt": {
+            "original": {
+                "file": "ORIGINAL_IDS-UCS-Ext-C.txt",
+                "size": 112590,
+                "entries": 4149
+            },
+            "resolved": {
+                "file": "RESOLVED_IDS-UCS-Ext-C.txt",
+                "size": 104464,
+                "entries": 4149
+            },
+            "partially_resolved": {
+                "file": "PARTIALLY_RESOLVED_IDS-UCS-Ext-C.txt",
+                "size": 104464,
+                "entries": 23
+            },
+            "no_full_resolution": {
+                "file": "NO_FULL_RESOLUTION_IDS-UCS-Ext-C.json",
+                "size": 2,
+                "entries": 0
+            }
+        },
+        "IDS-UCS-Ext-D.txt": {
+            "original": {
+                "file": "ORIGINAL_IDS-UCS-Ext-D.txt",
+                "size": 6739,
+                "entries": 222
+            },
+            "resolved": {
+                "file": "RESOLVED_IDS-UCS-Ext-D.txt",
+                "size": 6323,
+                "entries": 222
+            },
+            "partially_resolved": {
+                "file": "PARTIALLY_RESOLVED_IDS-UCS-Ext-D.txt",
+                "size": 6323,
+                "entries": 14
+            },
+            "no_full_resolution": {
+                "file": "NO_FULL_RESOLUTION_IDS-UCS-Ext-D.json",
+                "size": 2,
+                "entries": 0
+            }
+        },
+        "IDS-UCS-Ext-E.txt": {
+            "original": {
+                "file": "ORIGINAL_IDS-UCS-Ext-E.txt",
+                "size": 140601,
+                "entries": 5762
+            },
+            "resolved": {
+                "file": "RESOLVED_IDS-UCS-Ext-E.txt",
+                "size": 147118,
+                "entries": 5760
+            },
+            "partially_resolved": {
+                "file": "PARTIALLY_RESOLVED_IDS-UCS-Ext-E.txt",
+                "size": 147118,
+                "entries": 51
+            },
+            "no_full_resolution": {
+                "file": "NO_FULL_RESOLUTION_IDS-UCS-Ext-E.json",
+                "size": 171,
+                "entries": 2
+            }
+        },
+        "IDS-UCS-Ext-F.txt": {
+            "original": {
+                "file": "ORIGINAL_IDS-UCS-Ext-F.txt",
+                "size": 207504,
+                "entries": 7473
+            },
+            "resolved": {
+                "file": "RESOLVED_IDS-UCS-Ext-F.txt",
+                "size": 199722,
+                "entries": 7461
+            },
+            "partially_resolved": {
+                "file": "PARTIALLY_RESOLVED_IDS-UCS-Ext-F.txt",
+                "size": 199722,
+                "entries": 333
+            },
+            "no_full_resolution": {
+                "file": "NO_FULL_RESOLUTION_IDS-UCS-Ext-F.json",
+                "size": 1220,
+                "entries": 12
+            }
+        },
+        "IDS-UCS-Ext-G.txt": {
+            "original": {
+                "file": "ORIGINAL_IDS-UCS-Ext-G.txt",
+                "size": 118064,
+                "entries": 4939
+            },
+            "resolved": {
+                "file": "RESOLVED_IDS-UCS-Ext-G.txt",
+                "size": 117885,
+                "entries": 4939
+            },
+            "partially_resolved": {
+                "file": "PARTIALLY_RESOLVED_IDS-UCS-Ext-G.txt",
+                "size": 117885,
+                "entries": 3
+            },
+            "no_full_resolution": {
+                "file": "NO_FULL_RESOLUTION_IDS-UCS-Ext-G.json",
+                "size": 2,
+                "entries": 0
+            }
+        }
+    },
+    "ts": "20210707T174408.717888Z"
+}
