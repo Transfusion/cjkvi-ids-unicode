@@ -9,9 +9,18 @@ from cjkvi_ids_unicode.data_access.GlyphWiki import GlyphWiki
 
 from cjkvi_ids_unicode import __version__, constants
 
+import gzip, shutil, pytest
+
 
 def test_version():
     assert __version__ == "0.1.0"
+
+
+@pytest.fixture(scope="session", autouse=True)
+def init(request):
+    with gzip.open("tests/test_data/dump_newest_only.txt.gz", "rb") as f_in:
+        with open("tests/test_data/dump_newest_only.txt", "wb") as f_out:
+            shutil.copyfileobj(f_in, f_out)
 
 
 def test_glyphwiki_resolution():
