@@ -62,10 +62,10 @@ def init_raw_data():
         if not os.path.exists(folder):
             os.mkdir(folder)
         # download and extract
-        cur_day = datetime.datetime.now().strftime("%d")
+        # cur_day = datetime.datetime.now().strftime("%d")
         glyphwiki_file = os.path.join(constants.GLYPHWIKI_ROOT_FOLDER, "dump.tar.gz")
         download_file(
-            f"http://kage.osdn.jp/glyphwiki/dump{cur_day}.tar.gz",
+            f"https://glyphwiki.org/dump.tar.gz",
             glyphwiki_file,
         )
         tar = tarfile.open(glyphwiki_file, "r:gz")
