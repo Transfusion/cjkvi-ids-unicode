@@ -3,18 +3,18 @@
         "IDS-UCS-Basic.txt": {
             "original": {
                 "file": "ORIGINAL_IDS-UCS-Basic.txt",
-                "size": 447188,
+                "size": 447803,
                 "entries": 20976
             },
             "resolved": {
                 "file": "RESOLVED_IDS-UCS-Basic.txt",
-                "size": 522317,
+                "size": 522669,
                 "entries": 20976
             },
             "partially_resolved": {
                 "file": "PARTIALLY_RESOLVED_IDS-UCS-Basic.txt",
-                "size": 522317,
-                "entries": 194
+                "size": 522669,
+                "entries": 191
             },
             "no_full_resolution": {
                 "file": "NO_FULL_RESOLUTION_IDS-UCS-Basic.json",
@@ -25,18 +25,18 @@
         "IDS-UCS-Compat-Supplement.txt": {
             "original": {
                 "file": "ORIGINAL_IDS-UCS-Compat-Supplement.txt",
-                "size": 16738,
+                "size": 16673,
                 "entries": 542
             },
             "resolved": {
                 "file": "RESOLVED_IDS-UCS-Compat-Supplement.txt",
-                "size": 14985,
+                "size": 15216,
                 "entries": 542
             },
             "partially_resolved": {
                 "file": "PARTIALLY_RESOLVED_IDS-UCS-Compat-Supplement.txt",
-                "size": 14985,
-                "entries": 30
+                "size": 15216,
+                "entries": 25
             },
             "no_full_resolution": {
                 "file": "NO_FULL_RESOLUTION_IDS-UCS-Compat-Supplement.json",
@@ -47,18 +47,18 @@
         "IDS-UCS-Compat.txt": {
             "original": {
                 "file": "ORIGINAL_IDS-UCS-Compat.txt",
-                "size": 5278,
-                "entries": 291
+                "size": 5944,
+                "entries": 355
             },
             "resolved": {
                 "file": "RESOLVED_IDS-UCS-Compat.txt",
-                "size": 8316,
-                "entries": 291
+                "size": 9073,
+                "entries": 355
             },
             "partially_resolved": {
                 "file": "PARTIALLY_RESOLVED_IDS-UCS-Compat.txt",
-                "size": 8316,
-                "entries": 7
+                "size": 9073,
+                "entries": 10
             },
             "no_full_resolution": {
                 "file": "NO_FULL_RESOLUTION_IDS-UCS-Compat.json",
@@ -69,18 +69,18 @@
         "IDS-UCS-Ext-A.txt": {
             "original": {
                 "file": "ORIGINAL_IDS-UCS-Ext-A.txt",
-                "size": 142311,
+                "size": 142310,
                 "entries": 6604
             },
             "resolved": {
                 "file": "RESOLVED_IDS-UCS-Ext-A.txt",
-                "size": 162585,
+                "size": 162574,
                 "entries": 6604
             },
             "partially_resolved": {
                 "file": "PARTIALLY_RESOLVED_IDS-UCS-Ext-A.txt",
-                "size": 162585,
-                "entries": 40
+                "size": 162574,
+                "entries": 41
             },
             "no_full_resolution": {
                 "file": "NO_FULL_RESOLUTION_IDS-UCS-Ext-A.json",
@@ -91,150 +91,150 @@
         "IDS-UCS-Ext-B-1.txt": {
             "original": {
                 "file": "ORIGINAL_IDS-UCS-Ext-B-1.txt",
-                "size": 240255,
+                "size": 236988,
                 "entries": 8192
             },
             "resolved": {
                 "file": "RESOLVED_IDS-UCS-Ext-B-1.txt",
-                "size": 238229,
-                "entries": 8172
+                "size": 234009,
+                "entries": 8182
             },
             "partially_resolved": {
                 "file": "PARTIALLY_RESOLVED_IDS-UCS-Ext-B-1.txt",
-                "size": 238229,
-                "entries": 312
+                "size": 234009,
+                "entries": 276
             },
             "no_full_resolution": {
                 "file": "NO_FULL_RESOLUTION_IDS-UCS-Ext-B-1.json",
-                "size": 1442,
-                "entries": 20
+                "size": 986,
+                "entries": 10
             }
         },
         "IDS-UCS-Ext-B-2.txt": {
             "original": {
                 "file": "ORIGINAL_IDS-UCS-Ext-B-2.txt",
-                "size": 239124,
+                "size": 233018,
                 "entries": 8192
             },
             "resolved": {
                 "file": "RESOLVED_IDS-UCS-Ext-B-2.txt",
-                "size": 237204,
-                "entries": 8183
+                "size": 229924,
+                "entries": 8180
             },
             "partially_resolved": {
                 "file": "PARTIALLY_RESOLVED_IDS-UCS-Ext-B-2.txt",
-                "size": 237204,
-                "entries": 237
+                "size": 229924,
+                "entries": 206
             },
             "no_full_resolution": {
                 "file": "NO_FULL_RESOLUTION_IDS-UCS-Ext-B-2.json",
-                "size": 667,
-                "entries": 9
+                "size": 949,
+                "entries": 12
             }
         },
         "IDS-UCS-Ext-B-3.txt": {
             "original": {
                 "file": "ORIGINAL_IDS-UCS-Ext-B-3.txt",
-                "size": 236352,
+                "size": 232013,
                 "entries": 8192
             },
             "resolved": {
                 "file": "RESOLVED_IDS-UCS-Ext-B-3.txt",
-                "size": 239747,
-                "entries": 8176
+                "size": 234804,
+                "entries": 8179
             },
             "partially_resolved": {
                 "file": "PARTIALLY_RESOLVED_IDS-UCS-Ext-B-3.txt",
-                "size": 239747,
-                "entries": 203
+                "size": 234804,
+                "entries": 172
             },
             "no_full_resolution": {
                 "file": "NO_FULL_RESOLUTION_IDS-UCS-Ext-B-3.json",
-                "size": 1444,
-                "entries": 16
+                "size": 1245,
+                "entries": 13
             }
         },
         "IDS-UCS-Ext-B-4.txt": {
             "original": {
                 "file": "ORIGINAL_IDS-UCS-Ext-B-4.txt",
-                "size": 236316,
+                "size": 231667,
                 "entries": 8192
             },
             "resolved": {
                 "file": "RESOLVED_IDS-UCS-Ext-B-4.txt",
-                "size": 242284,
-                "entries": 8178
+                "size": 234744,
+                "entries": 8183
             },
             "partially_resolved": {
                 "file": "PARTIALLY_RESOLVED_IDS-UCS-Ext-B-4.txt",
-                "size": 242284,
-                "entries": 215
+                "size": 234744,
+                "entries": 198
             },
             "no_full_resolution": {
                 "file": "NO_FULL_RESOLUTION_IDS-UCS-Ext-B-4.json",
-                "size": 997,
-                "entries": 14
+                "size": 868,
+                "entries": 9
             }
         },
         "IDS-UCS-Ext-B-5.txt": {
             "original": {
                 "file": "ORIGINAL_IDS-UCS-Ext-B-5.txt",
-                "size": 233239,
+                "size": 229025,
                 "entries": 8192
             },
             "resolved": {
                 "file": "RESOLVED_IDS-UCS-Ext-B-5.txt",
-                "size": 230530,
-                "entries": 8185
+                "size": 224601,
+                "entries": 8182
             },
             "partially_resolved": {
                 "file": "PARTIALLY_RESOLVED_IDS-UCS-Ext-B-5.txt",
-                "size": 230530,
-                "entries": 135
+                "size": 224601,
+                "entries": 120
             },
             "no_full_resolution": {
                 "file": "NO_FULL_RESOLUTION_IDS-UCS-Ext-B-5.json",
-                "size": 625,
-                "entries": 7
+                "size": 899,
+                "entries": 10
             }
         },
         "IDS-UCS-Ext-B-6.txt": {
             "original": {
                 "file": "ORIGINAL_IDS-UCS-Ext-B-6.txt",
-                "size": 48764,
+                "size": 47938,
                 "entries": 1751
             },
             "resolved": {
                 "file": "RESOLVED_IDS-UCS-Ext-B-6.txt",
-                "size": 46655,
-                "entries": 1747
+                "size": 45554,
+                "entries": 1748
             },
             "partially_resolved": {
                 "file": "PARTIALLY_RESOLVED_IDS-UCS-Ext-B-6.txt",
-                "size": 46655,
-                "entries": 34
+                "size": 45554,
+                "entries": 30
             },
             "no_full_resolution": {
                 "file": "NO_FULL_RESOLUTION_IDS-UCS-Ext-B-6.json",
-                "size": 598,
-                "entries": 4
+                "size": 455,
+                "entries": 3
             }
         },
         "IDS-UCS-Ext-C.txt": {
             "original": {
                 "file": "ORIGINAL_IDS-UCS-Ext-C.txt",
-                "size": 112590,
-                "entries": 4149
+                "size": 112545,
+                "entries": 4153
             },
             "resolved": {
                 "file": "RESOLVED_IDS-UCS-Ext-C.txt",
-                "size": 104464,
-                "entries": 4149
+                "size": 104841,
+                "entries": 4153
             },
             "partially_resolved": {
                 "file": "PARTIALLY_RESOLVED_IDS-UCS-Ext-C.txt",
-                "size": 104464,
-                "entries": 23
+                "size": 104841,
+                "entries": 22
             },
             "no_full_resolution": {
                 "file": "NO_FULL_RESOLUTION_IDS-UCS-Ext-C.json",
@@ -245,18 +245,18 @@
         "IDS-UCS-Ext-D.txt": {
             "original": {
                 "file": "ORIGINAL_IDS-UCS-Ext-D.txt",
-                "size": 6739,
+                "size": 6505,
                 "entries": 222
             },
             "resolved": {
                 "file": "RESOLVED_IDS-UCS-Ext-D.txt",
-                "size": 6323,
+                "size": 6129,
                 "entries": 222
             },
             "partially_resolved": {
                 "file": "PARTIALLY_RESOLVED_IDS-UCS-Ext-D.txt",
-                "size": 6323,
-                "entries": 14
+                "size": 6129,
+                "entries": 13
             },
             "no_full_resolution": {
                 "file": "NO_FULL_RESOLUTION_IDS-UCS-Ext-D.json",
@@ -267,69 +267,113 @@
         "IDS-UCS-Ext-E.txt": {
             "original": {
                 "file": "ORIGINAL_IDS-UCS-Ext-E.txt",
-                "size": 140601,
+                "size": 140654,
                 "entries": 5762
             },
             "resolved": {
                 "file": "RESOLVED_IDS-UCS-Ext-E.txt",
-                "size": 147118,
-                "entries": 5760
+                "size": 147929,
+                "entries": 5761
             },
             "partially_resolved": {
                 "file": "PARTIALLY_RESOLVED_IDS-UCS-Ext-E.txt",
-                "size": 147118,
-                "entries": 51
+                "size": 147929,
+                "entries": 54
             },
             "no_full_resolution": {
                 "file": "NO_FULL_RESOLUTION_IDS-UCS-Ext-E.json",
-                "size": 171,
-                "entries": 2
+                "size": 62,
+                "entries": 1
             }
         },
         "IDS-UCS-Ext-F.txt": {
             "original": {
                 "file": "ORIGINAL_IDS-UCS-Ext-F.txt",
-                "size": 207504,
+                "size": 189981,
                 "entries": 7473
             },
             "resolved": {
                 "file": "RESOLVED_IDS-UCS-Ext-F.txt",
-                "size": 199722,
-                "entries": 7461
+                "size": 201014,
+                "entries": 7464
             },
             "partially_resolved": {
                 "file": "PARTIALLY_RESOLVED_IDS-UCS-Ext-F.txt",
-                "size": 199722,
-                "entries": 333
+                "size": 201014,
+                "entries": 206
             },
             "no_full_resolution": {
                 "file": "NO_FULL_RESOLUTION_IDS-UCS-Ext-F.json",
-                "size": 1220,
-                "entries": 12
+                "size": 1121,
+                "entries": 9
             }
         },
         "IDS-UCS-Ext-G.txt": {
             "original": {
                 "file": "ORIGINAL_IDS-UCS-Ext-G.txt",
-                "size": 118064,
+                "size": 118083,
                 "entries": 4939
             },
             "resolved": {
                 "file": "RESOLVED_IDS-UCS-Ext-G.txt",
-                "size": 117885,
-                "entries": 4939
+                "size": 117840,
+                "entries": 4938
             },
             "partially_resolved": {
                 "file": "PARTIALLY_RESOLVED_IDS-UCS-Ext-G.txt",
-                "size": 117885,
-                "entries": 3
+                "size": 117840,
+                "entries": 5
             },
             "no_full_resolution": {
                 "file": "NO_FULL_RESOLUTION_IDS-UCS-Ext-G.json",
+                "size": 45,
+                "entries": 1
+            }
+        },
+        "IDS-UCS-Ext-H.txt": {
+            "original": {
+                "file": "ORIGINAL_IDS-UCS-Ext-H.txt",
+                "size": 105751,
+                "entries": 4192
+            },
+            "resolved": {
+                "file": "RESOLVED_IDS-UCS-Ext-H.txt",
+                "size": 103692,
+                "entries": 4162
+            },
+            "partially_resolved": {
+                "file": "PARTIALLY_RESOLVED_IDS-UCS-Ext-H.txt",
+                "size": 103692,
+                "entries": 30
+            },
+            "no_full_resolution": {
+                "file": "NO_FULL_RESOLUTION_IDS-UCS-Ext-H.json",
+                "size": 1507,
+                "entries": 30
+            }
+        },
+        "IDS-UCS-Ext-I.txt": {
+            "original": {
+                "file": "ORIGINAL_IDS-UCS-Ext-I.txt",
+                "size": 14587,
+                "entries": 622
+            },
+            "resolved": {
+                "file": "RESOLVED_IDS-UCS-Ext-I.txt",
+                "size": 14548,
+                "entries": 622
+            },
+            "partially_resolved": {
+                "file": "PARTIALLY_RESOLVED_IDS-UCS-Ext-I.txt",
+                "size": 14548,
+                "entries": 0
+            },
+            "no_full_resolution": {
+                "file": "NO_FULL_RESOLUTION_IDS-UCS-Ext-I.json",
                 "size": 2,
                 "entries": 0
             }
         }
     },
-    "ts": "20210708T092952.912995Z"
+    "ts": "20240809T203711.770245Z"
 }
